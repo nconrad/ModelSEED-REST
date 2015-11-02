@@ -41,13 +41,13 @@ gulp test
 
 ## Building Web Documentation
 
-Docsstrings in server.js are parsed into JSON using `./docs/parse-docs.js`.
+Docstrings in server.js are parsed into JSON using `./docs/parse-docs.js`.
 The resulting JSON structure `./api-documentation.json` is then used to produce
 fancy online documentation.  See <a href="http://github.com/modelseed/modelseed-UI">ModelSEED-UI</a>
 for the front-end code.
 
 Note: `api-documentation.json` is automatically rebuilt with gulp.
-To manually build `api-documentation.json`, run:
+To manually build it, run:
 
 ```
 gulp docs

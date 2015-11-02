@@ -1,0 +1,35 @@
+{
+  "name": "ModelSEED-REST",
+  "version": "0.0.0",
+  "description": "JSON REST API for ModelSEED ",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jasmine-node tests/",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nconrad/ModelSEED-REST.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nconrad/ModelSEED-REST/issues"
+  },
+  "homepage": "https://github.com/nconrad/ModelSEED-REST",
+  "dependencies": {
+    "apidoc": "^0.13.1",
+    "comment-parser": "^0.3.0",
+    "express": "^4.13.3",
+    "jasmine-node": "^1.14.5",
+    "q": "^1.4.1",
+    "request": "^2.65.0"
+  },
+  "devDependencies": {
+    "commander": "^2.9.0",
+    "gulp": "^3.9.0"
+  }
+}

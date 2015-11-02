@@ -18,18 +18,17 @@ cd ModelSEED-REST
 npm install
 ```
 
-Notes:
-- `npm install` installs all node module dependencies required
+Note: `npm install` installs all node module dependencies
 
 
 ## Start Server
 
+Running `gulp` (or `gulp server`) starts a development server along with a process to
+update api-doc.json.  The dev server will restart automatically on file change (any .js file).
+
 ```
 gulp
 ```
-
-Running `gulp` (or `gulp server`) starts a development server along with a process to
-update api-doc.json.  The dev server will restart automatically on file change (any .js file).
 
 
 ## Tests
@@ -43,8 +42,8 @@ gulp test
 
 ## Building Web Documentation
 
-Docs strings in server.js are parsed into JSON using `./docs/parse-docs.js`.
-The resulting JSON structure `api-documentation.json` is then used to produce
+Docsstrings in server.js are parsed into JSON using `./docs/parse-docs.js`.
+The resulting JSON structure `./api-documentation.json` is then used to produce
 fancy online documentation.  See <a href="http://github.com/modelseed/modelseed-UI">ModelSEED-UI</a>
 for the front-end code.
 

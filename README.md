@@ -30,9 +30,6 @@ update api-doc.json.  The dev server will restart automatically on file change (
 gulp
 ```
 
-Note: a token can be placed in `./dev-user-token` for testing.
-
-
 ## Tests
 
 API tests are ran with `gulp test` or `npm test`.

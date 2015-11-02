@@ -24,7 +24,7 @@ Note: `npm install` installs all node module dependencies
 ## Start Server
 
 Running `gulp` (or `gulp server`) starts a development server along with a process to
-update api-doc.json.  The dev server will restart automatically on file change (any .js file).  For testing, a token can be placed in the file `./dev-user-token`.
+update ./api-documentation.json.  The dev server will restart automatically on file change (any .js file).  For testing, a token can be placed in the file `./dev-user-token`.
 
 ```
 gulp

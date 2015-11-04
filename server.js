@@ -2,15 +2,15 @@
 var express = require('express');
 
 var request 	= require('request'),
-	cliOptions 	= require('commander'),
-	fs  		= require('fs'),
- 	modelParser = require('./parsers/model.js'),
-	fbaParser 	= require('./parsers/fba.js');
+    cliOptions 	= require('commander'),
+    fs  		= require('fs'),
+    modelParser = require('./parsers/model.js'),
+    fbaParser 	= require('./parsers/fba.js');
 
 
 cliOptions.version('0.0.1')
-		   .option('-d, --dev', 'Developer mode; this option attempts to use a token in the file dev-user-token')
-		   .parse(process.argv);
+           .option('-d, --dev', 'Developer mode; this option attempts to use a token in the file dev-user-token')
+           .parse(process.argv);
 
 
 var app = express();
@@ -19,18 +19,18 @@ var WS_URL = 'http://p3.theseed.org/services/Workspace';
 
 // default RPC request data structure
 var postData = {
-	version: "1.1",
-	method: null,
-	params: null
+    version: "1.1",
+    method: null,
+    params: null
 };
 
 // set default request header, if "dev" option is given
 var headers;
 if (cliOptions.dev) {
-	fs.readFile('dev-user-token', 'utf8', function (err, token) {
-		console.log('\n\x1b[36m'+'using development token:'+'\x1b[0m', token, '\n')
-		headers = {"Authorization": token.trim()}
-	})
+    fs.readFile('dev-user-token', 'utf8', function (err, token) {
+        console.log('\n\x1b[36m'+'using development token:'+'\x1b[0m', token, '\n')
+        headers = {"Authorization": token.trim()}
+    })
 }
 
 
@@ -79,40 +79,40 @@ if (cliOptions.dev) {
  *      ]
  */
 app.get('/v0/list/*', function (req, res) {
-	var path = '/'+req.params[0];
+    var path = '/'+req.params[0];
 
-	postData.method = 'Workspace.ls';
-	postData.params =  {paths: [ path ] } ;
-	if ('filter' in req.query && req.query.filter === 'folders')
-		postData.params.excludeObjects = true;
-	else if ('filter' in req.query && req.query.filter === 'objects')
-		postData.params.excludeDirectories = true;
+    postData.method = 'Workspace.ls';
+    postData.params =  {paths: [ path ] } ;
+    if ('filter' in req.query && req.query.filter === 'folders')
+        postData.params.excludeObjects = true;
+    else if ('filter' in req.query && req.query.filter === 'objects')
+        postData.params.excludeDirectories = true;
 
-	if ('recursive' in req.query)
-		postData.params.recursive = true;
+    if ('recursive' in req.query)
+        postData.params.recursive = true;
 
 
-	postData.params = [postData.params]
-	request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
-		function (error, response, body) {
-			//console.log('error',  response)
-			var data = JSON.parse(body)
+    postData.params = [postData.params]
+    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+        function (error, response, body) {
+            //console.log('error',  response)
+            var data = JSON.parse(body)
 
-			if (!('result' in data)) {
-				var e = sanitizeError(data);
-    			res.status(520).send( e );
-				return;
-			}
+            if (!('result' in data)) {
+                var e = sanitizeError(data);
+                res.status(520).send( e );
+                return;
+            }
 
-			var items = data.result[0][path];
+            var items = data.result[0][path];
 
-			var contents = [];
-			for (var i=0; i<items.length; i++ ) {
-				contents.push( sanitizeMeta(items[i]) );
-			}
+            var contents = [];
+            for (var i=0; i<items.length; i++ ) {
+                contents.push( sanitizeMeta(items[i]) );
+            }
 
-			res.send( contents );
-		});
+            res.send( contents );
+        });
 })
 
 
@@ -144,23 +144,23 @@ app.get('/v0/list/*', function (req, res) {
  *      }
  */
 .get('/v0/meta/*', function (req, res) {
-	var path = '/'+req.params[0];
+    var path = '/'+req.params[0];
 
-	postData.method = 'Workspace.get';
-	postData.params = [ {objects: [ path ], metadata_only: true} ];
-	request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
-		function (error, response, body) {
-			var data = JSON.parse(body)
+    postData.method = 'Workspace.get';
+    postData.params = [ {objects: [ path ], metadata_only: true} ];
+    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+        function (error, response, body) {
+            var data = JSON.parse(body)
 
-			if (!('result' in data)) {
-				var e = sanitizeError(data);
-    			res.status(520).send( e );
-				return;
-			}
+            if (!('result' in data)) {
+                var e = sanitizeError(data);
+                res.status(520).send( e );
+                return;
+            }
 
-			var d = data.result[0][0];
-			res.send( sanitizeMeta(d[0]) );
-		});
+            var d = data.result[0][0];
+            res.send( sanitizeMeta(d[0]) );
+        });
 })
 
 /**
@@ -178,23 +178,23 @@ app.get('/v0/list/*', function (req, res) {
  *     }
  */
 .get('/v0/objects/*', function (req, res) {
-	var path = '/'+req.params[0];
+    var path = '/'+req.params[0];
 
-	postData.method = 'Workspace.get';
-	postData.params = [ {objects: [ path ]} ];
-	request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
-		function (error, response, body) {
-			var data = JSON.parse(body)
+    postData.method = 'Workspace.get';
+    postData.params = [ {objects: [ path ]} ];
+    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+        function (error, response, body) {
+            var data = JSON.parse(body)
 
-			if (!('result' in data)) {
-				var e = sanitizeError(data);
-    			res.status(520).send( e );
-				return;
-			}
+            if (!('result' in data)) {
+                var e = sanitizeError(data);
+                res.status(520).send( e );
+                return;
+            }
 
-			var d = data.result[0][0];
-    		res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
-		});
+            var d = data.result[0][0];
+            res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
+        });
 })
 
 
@@ -208,25 +208,25 @@ app.get('/v0/list/*', function (req, res) {
  * @apiSuccess {Model Object} A parsed and sanitized model object
  */
 .get('/v0/model/*', function (req, res) {
-	var path = '/'+req.params[0];
+    var path = '/'+req.params[0];
 
-	postData.method = 'Workspace.get';
-	postData.params =  [ {objects: [ path ]} ];
+    postData.method = 'Workspace.get';
+    postData.params =  [ {objects: [ path ]} ];
 
-	request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
-		function (error, response, body) {
-			var data = JSON.parse(body);
+    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+        function (error, response, body) {
+            var data = JSON.parse(body);
 
-			if (!('result' in data)) {
-				var e = sanitizeError(data);
-    			res.status(520).send( e );
-				return;
-			}
+            if (!('result' in data)) {
+                var e = sanitizeError(data);
+                res.status(520).send( e );
+                return;
+            }
 
-			var d = data.result[0][0];
+            var d = data.result[0][0];
 
-			res.send( {meta: sanitizeMeta(d[0]), data: modelParser.parse(JSON.parse(d[1])) } );
-		});
+            res.send( {meta: sanitizeMeta(d[0]), data: modelParser.parse(JSON.parse(d[1])) } );
+        });
 })
 
 
@@ -240,17 +240,17 @@ app.get('/v0/list/*', function (req, res) {
  *
  */
 .get('/v0/fba/*', function (req, res) {
-	var path = '/'+req.params[0];
+    var path = '/'+req.params[0];
 
-	postData.method = 'Workspace.get';
-	postData.params = [ {objects: [ path ]} ];
-	request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
-		function (error, response, body) {
-			var d = JSON.parse(body).result[0][0]; // ah, good stuff;
-			if (!error && response.statusCode == 200) {
-    			res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
-			}
-		});
+    postData.method = 'Workspace.get';
+    postData.params = [ {objects: [ path ]} ];
+    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+        function (error, response, body) {
+            var d = JSON.parse(body).result[0][0]; // ah, good stuff;
+            if (!error && response.statusCode == 200) {
+                res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
+            }
+        });
 })
 
 /**
@@ -265,49 +265,49 @@ app.get('/v0/list/*', function (req, res) {
  *
  */
 .get('/v0/my-models/*', function (req, res) {
-	var path = '/'+req.params[0];
+    var path = '/'+req.params[0];
 
-	postData.method = 'Workspace.get';
-	postData.params = [ {objects: [ path ]} ];
-	request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
-		function (error, response, body) {
-			var d = JSON.parse(body).result[0][0]; // ah, good stuff;
-			if (!error && response.statusCode == 200) {
-    			res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
-			}
-		});
+    postData.method = 'Workspace.get';
+    postData.params = [ {objects: [ path ]} ];
+    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+        function (error, response, body) {
+            var d = JSON.parse(body).result[0][0]; // ah, good stuff;
+            if (!error && response.statusCode == 200) {
+                res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
+            }
+        });
 })
 
 
 .get('/test', function (req, res) {
-	res.send( 'hello world' );
+    res.send( 'hello world' );
 })
 
 
 // sanitize error messages from services
 function sanitizeError(data) {
-	var error = data.error.error.split('_ERROR_');
-	var msg = error[1],
-		debug = error[2].trim();
+    var error = data.error.error.split('_ERROR_');
+    var msg = error[1],
+        debug = error[2].trim();
 
-	return {msg: msg, debug: debug};
+    return {msg: msg, debug: debug};
 }
 
 // sanitize workspace meta data list into dictionary
 function sanitizeMeta(l) {
-	return {
-		name: l[0],
+    return {
+        name: l[0],
         type: l[1],
         path: l[2]+l[0],
         modDate: l[3],
         id: l[4],
         owner: l[5],
         size: l[6],
-		userMeta: l[7],
-		autoMeta: l[8],
-		userPermission: l[9],
-		globalPermission: l[10],
-		shockUrl: l[11]
+        userMeta: l[7],
+        autoMeta: l[8],
+        userPermission: l[9],
+        globalPermission: l[10],
+        shockUrl: l[11]
     };
 }
 

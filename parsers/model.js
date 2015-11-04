@@ -4,19 +4,19 @@ exports.parse = function(data) {
 
 
     var compartNameMapping = {
-		"c":"Cytosol",
-		"p":"Periplasm",
-		"g":"Golgi apparatus",
-		"e":"Extracellular",
-		"r":"Endoplasmic reticulum",
-		"l":"Lysosome",
-		"n":"Nucleus",
-		"d":"Plastid",
-		"m":"Mitochondria",
-		"x":"Peroxisome",
-		"v":"Vacuole",
-		"w":"Cell wall",
-	};
+        "c":"Cytosol",
+        "p":"Periplasm",
+        "g":"Golgi apparatus",
+        "e":"Extracellular",
+        "r":"Endoplasmic reticulum",
+        "l":"Lysosome",
+        "n":"Nucleus",
+        "d":"Plastid",
+        "m":"Mitochondria",
+        "x":"Peroxisome",
+        "v":"Vacuole",
+        "w":"Cell wall",
+    };
 
     this.cpdhash = {};
     this.biohash = {};
@@ -43,8 +43,8 @@ exports.parse = function(data) {
     // create gapfilling hash
     for (var i=0; i < this.gapfillings.length; i++) {
 
-    	this.gapfillings[i].simpid = "gf."+(i+1);
-    	this.gfhash[this.gapfillings[i].simpid] = this.gapfillings[i];
+        this.gapfillings[i].simpid = "gf."+(i+1);
+        this.gfhash[this.gapfillings[i].simpid] = this.gapfillings[i];
         //gappfillings.push({integrated: })
     }
 
@@ -85,26 +85,26 @@ exports.parse = function(data) {
     }
 
     for (var i=0; i < this.biomasses.length; i++) {
-    	var biomass = this.biomasses[i];
+        var biomass = this.biomasses[i];
 
-    	this.biohash[biomass.id] = biomass;
-    	biomass.dispid = biomass.id;
-    	var reactants = "";
+        this.biohash[biomass.id] = biomass;
+        biomass.dispid = biomass.id;
+        var reactants = "";
         var products = "";
-    	for(var j=0; j < biomass.biomasscompounds.length; j++) {
-    		var biocpd = biomass.biomasscompounds[j];
-    		biocpd.id = biocpd.modelcompound_ref.split("/").pop();
+        for(var j=0; j < biomass.biomasscompounds.length; j++) {
+            var biocpd = biomass.biomasscompounds[j];
+            biocpd.id = biocpd.modelcompound_ref.split("/").pop();
 
-    		//var idarray = biocpd.id.split('_');
-    		biocpd.dispid = biocpd.id//idarray[0]+"["+idarray[1]+"]";
+            //var idarray = biocpd.id.split('_');
+            biocpd.dispid = biocpd.id//idarray[0]+"["+idarray[1]+"]";
 
-    		biocpd.name = this.cpdhash[biocpd.id].name;
-    		biocpd.formula = this.cpdhash[biocpd.id].formula;
-    		biocpd.charge = this.cpdhash[biocpd.id].charge;
-    		biocpd.cmpkbid = this.cpdhash[biocpd.id].compartment;
-    		biocpd.biomass = biomass.id;
-    		this.biomasscpds.push(biocpd);
-    		if (biocpd.coefficient < 0) {
+            biocpd.name = this.cpdhash[biocpd.id].name;
+            biocpd.formula = this.cpdhash[biocpd.id].formula;
+            biocpd.charge = this.cpdhash[biocpd.id].charge;
+            biocpd.cmpkbid = this.cpdhash[biocpd.id].compartment;
+            biocpd.biomass = biomass.id;
+            this.biomasscpds.push(biocpd);
+            if (biocpd.coefficient < 0) {
                 if (reactants.length > 0) {
                     reactants += " + ";
                 }
@@ -133,8 +133,8 @@ exports.parse = function(data) {
                             coefficient: biocpd.coefficient,
                             compartment: compartment
                            })
-    	}
-    	biomass.equation = reactants + " => " + products;
+        }
+        biomass.equation = reactants + " => " + products;
     }
 
     var gapfills= []
@@ -155,7 +155,7 @@ exports.parse = function(data) {
 
         // huh?
         if (rxn.modelReactionProteins > 0) {
-        	rxn.gpr = "";
+            rxn.gpr = "";
         }
         for (var j=0; j< rxn.modelReactionReagents.length; j++) {
             var rgt = rxn.modelReactionReagents[j];
@@ -188,25 +188,25 @@ exports.parse = function(data) {
             var prot = rxn.modelReactionProteins[j];
 
             if (j > 0) {
-               	rxn.gpr += " or ";
+                   rxn.gpr += " or ";
             }
             //rxn.gpr += "(";
             for (var k=0; k< prot.modelReactionProteinSubunits.length; k++) {
                 var subunit = prot.modelReactionProteinSubunits[k];
                 if (k > 0) {
-                	rxn.gpr += " and ";
+                    rxn.gpr += " and ";
                 }
                 rxn.gpr += "(";
                 if (subunit.feature_refs.length == 0) {
-                	rxn.gpr += "Unknown";
+                    rxn.gpr += "Unknown";
                 }
                 for (var m=0; m< subunit.feature_refs.length; m++) {
-                	var ftrid = subunit.feature_refs[m].split("/").pop();
+                    var ftrid = subunit.feature_refs[m].split("/").pop();
                     rxn.ftrhash[ftrid] = 1;
                     if (m > 0) {
-                		rxn.gpr += " or ";
-                	}
-                	rxn.gpr += ftrid;
+                        rxn.gpr += " or ";
+                    }
+                    rxn.gpr += ftrid;
                 }
                 rxn.gpr += ")";
             }

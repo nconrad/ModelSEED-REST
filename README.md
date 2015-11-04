@@ -24,12 +24,11 @@ Note: `npm install` installs all node module dependencies
 ## Start Server
 
 Running `gulp` (or `gulp server`) starts a development server along with a process to
-update api-doc.json.  The dev server will restart automatically on file change (any .js file).
+update ./api-documentation.json.  The dev server will restart automatically on file change (any .js file).  For testing, a token can be placed in the file `./dev-user-token`.
 
 ```
 gulp
 ```
-
 
 ## Tests
 
@@ -42,17 +41,18 @@ gulp test
 
 ## Building Web Documentation
 
-Docsstrings in server.js are parsed into JSON using `./docs/parse-docs.js`.
+Docstrings in server.js are parsed into JSON using `./docs/parse-docs.js`.
 The resulting JSON structure `./api-documentation.json` is then used to produce
 fancy online documentation.  See <a href="http://github.com/modelseed/modelseed-UI">ModelSEED-UI</a>
 for the front-end code.
 
 Note: `api-documentation.json` is automatically rebuilt with gulp.
-To manually build `api-documentation.json`, run:
+To manually build it, run:
 
 ```
 gulp docs
 ```
+
 
 
 ## Contributing

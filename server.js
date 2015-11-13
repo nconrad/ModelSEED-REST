@@ -34,6 +34,15 @@ if (cliOptions.dev) {
 }
 
 
+app.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+}).use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+})
 
 /**
  * @api {get} /list/:path list objects in a folder
@@ -78,7 +87,7 @@ if (cliOptions.dev) {
  *        }
  *      ]
  */
-app.get('/v0/list/*', function (req, res) {
+.get('/v0/list/*', function (req, res) {
     var path = '/'+req.params[0];
 
     postData.method = 'Workspace.ls';
@@ -246,7 +255,7 @@ app.get('/v0/list/*', function (req, res) {
     postData.params = [ {objects: [ path ]} ];
     request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
         function (error, response, body) {
-            var d = JSON.parse(body).result[0][0]; // ah, good stuff;
+            var d = JSON.parse(body).result[0][0]; 
             if (!error && response.statusCode == 200) {
                 res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
             }
@@ -275,6 +284,42 @@ app.get('/v0/list/*', function (req, res) {
             if (!error && response.statusCode == 200) {
                 res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
             }
+        });
+})
+
+
+/**
+ * @api {get} /publications/ List select publications related to ModelSEED. List has no particular order.
+ * @apiName publications
+ *
+ *
+ * @apiSampleRequest /publications/
+ *
+ * @apiSuccess {json} meta List of publication objects.  All values are strings, except 'authors',
+ *  which is a an array of strings.
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ *   [{ "authors": 
+ *        [ "Henry, Christopher S",
+ *          "DeJongh, Matthew",
+ *          "Best, Aaron A",
+ *          "Frybarger, Paul M",
+ *          "Linsay, Ben",
+ *          "Stevens, Rick L"],
+ *       "title": "High-throughput generation, optimization and analysis of genome-scale metabolic models",
+ *       "publication": "Nature biotechnology",
+ *       "volumn": "28",
+ *       "number": "9",
+ *       "pages": "977-982",
+ *       "year": "2010",
+ *       "publisher": "Nature Publishing Group"
+ *    }]
+ */
+
+.get('/v0/publications', function (req, res) {
+    fs.readFile('./data/publications.json', 'utf8', function (err, data) {
+            var d = data
+            res.send( d );
         });
 })
 

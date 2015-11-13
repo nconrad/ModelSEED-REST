@@ -21,9 +21,9 @@ npm install
 Note: `npm install` installs all node module dependencies
 
 
-## Start Server
+## Start Dev Server
 
-Running `gulp` (or `gulp server`) starts a development server along with a process to
+Running `gulp` (or `gulp server` or `npm server.js --dev) starts a development server along with a process to
 update ./api-documentation.json.  The dev server will restart automatically on file change (any .js file).  For testing, a token can be placed in the file `./dev-user-token`.
 
 ```
@@ -53,6 +53,14 @@ To manually build it, run:
 gulp docs
 ```
 
+
+## Production
+
+The server script `server.js` should be ran with <a href="https://github.com/foreverjs/forever">forever</a>.
+
+```
+forever start -l /tmp/b --pidFile /tmp/a -a server.js
+```
 
 
 ## Contributing

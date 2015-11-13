@@ -2,6 +2,7 @@
 var express = require('express');
 
 var request 	= require('request'),
+    extend      = require('util')._extend,
     cliOptions 	= require('commander'),
     fs  		= require('fs'),
     modelParser = require('./parsers/model.js'),
@@ -24,25 +25,42 @@ var postData = {
     params: null
 };
 
-// set default request header, if "dev" option is given
-var headers;
+// if --dev option is used, set token to token in file "dev-user-token"
+// otherwise, pass on token, if there is one
 if (cliOptions.dev) {
-    fs.readFile('dev-user-token', 'utf8', function (err, token) {
-        console.log('\n\x1b[36m'+'using development token:'+'\x1b[0m', token, '\n')
-        headers = {"Authorization": token.trim()}
+    var token = fs.readFileSync('dev-user-token', 'utf8').trim();
+    console.log('\n\x1b[36m'+'using development token:'+'\x1b[0m', token, '\n')    
+
+    app.all('/', function(req, res, next) {
+        req.header = {"Authorization": token};                   
+        next();
+    }).use(function(req, res, next) {
+        req.header = {"Authorization": token};                   
+        next();
+    })
+} else {
+    app.all('/', function(req, res, next) {
+        if ('authentication' in req.headers)
+            req.header = {"Authorization": req.headers.authentication};    
+        next();
+    }).use(function(req, res, next) {
+        if ('authentication' in req.headers)
+            req.header = {"Authorization": req.headers.authentication};                 
+        next();
     })
 }
 
-
+// CORs 
 app.all('/', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
+    next();    
 }).use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();   
 })
+
 
 /**
  * @api {get} /list/:path list objects in a folder
@@ -90,19 +108,21 @@ app.all('/', function(req, res, next) {
 .get('/v0/list/*', function (req, res) {
     var path = '/'+req.params[0];
 
-    postData.method = 'Workspace.ls';
-    postData.params =  {paths: [ path ] } ;
+    var post = extend(postData, {
+        method: 'Workspace.ls',
+        params: {paths: [ path ] } 
+    })
+
     if ('filter' in req.query && req.query.filter === 'folders')
-        postData.params.excludeObjects = true;
+        post.params.excludeObjects = true;
     else if ('filter' in req.query && req.query.filter === 'objects')
-        postData.params.excludeDirectories = true;
+        post.params.excludeDirectories = true;
 
     if ('recursive' in req.query)
-        postData.params.recursive = true;
+        post.params.recursive = true;
 
-
-    postData.params = [postData.params]
-    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+    post.params = [post.params]
+    request.post(WS_URL, {form: JSON.stringify(post), headers: req.header },
         function (error, response, body) {
             //console.log('error',  response)
             var data = JSON.parse(body)
@@ -123,8 +143,6 @@ app.all('/', function(req, res, next) {
             res.send( contents );
         });
 })
-
-
 
 /**
  * @api {get} /meta/:path Get meta data on worksapce obj
@@ -155,9 +173,12 @@ app.all('/', function(req, res, next) {
 .get('/v0/meta/*', function (req, res) {
     var path = '/'+req.params[0];
 
-    postData.method = 'Workspace.get';
-    postData.params = [ {objects: [ path ], metadata_only: true} ];
-    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+    var post = extend(postData, {
+        method: 'Workspace.get',
+        params: [ {objects: [ path ], metadata_only: true} ]
+    })
+
+    request.post(WS_URL, {form: JSON.stringify(post), headers: req.header},
         function (error, response, body) {
             var data = JSON.parse(body)
 
@@ -189,9 +210,12 @@ app.all('/', function(req, res, next) {
 .get('/v0/objects/*', function (req, res) {
     var path = '/'+req.params[0];
 
-    postData.method = 'Workspace.get';
-    postData.params = [ {objects: [ path ]} ];
-    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+    var post = extend(postData, {
+        method: 'Workspace.get',
+        params: [ {objects: [ path ]} ]
+    })
+
+    request.post(WS_URL, {form: JSON.stringify(post), headers: req.header},
         function (error, response, body) {
             var data = JSON.parse(body)
 
@@ -206,8 +230,6 @@ app.all('/', function(req, res, next) {
         });
 })
 
-
-
 /**
  * @api {get} /model/:path Request model detail information
  * @apiName getModel
@@ -219,10 +241,12 @@ app.all('/', function(req, res, next) {
 .get('/v0/model/*', function (req, res) {
     var path = '/'+req.params[0];
 
-    postData.method = 'Workspace.get';
-    postData.params =  [ {objects: [ path ]} ];
+    var post = extend(postData, {
+        method: 'Workspace.get',
+        params: [ {objects: [ path ]} ]
+    })
 
-    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+    request.post(WS_URL, {form: JSON.stringify(post), headers: req.header},
         function (error, response, body) {
             var data = JSON.parse(body);
 
@@ -238,7 +262,6 @@ app.all('/', function(req, res, next) {
         });
 })
 
-
 /**
  * @api {get} /fba/:path Request model detail information
  * @apiName getModel
@@ -251,9 +274,12 @@ app.all('/', function(req, res, next) {
 .get('/v0/fba/*', function (req, res) {
     var path = '/'+req.params[0];
 
-    postData.method = 'Workspace.get';
-    postData.params = [ {objects: [ path ]} ];
-    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
+    var post = extend(postData, {
+        method: 'Workspace.get',
+        params: [ {objects: [ path ]} ]
+    })    
+
+    request.post(WS_URL, {form: JSON.stringify(post), headers: req.header},
         function (error, response, body) {
             var d = JSON.parse(body).result[0][0]; 
             if (!error && response.statusCode == 200) {
@@ -275,16 +301,7 @@ app.all('/', function(req, res, next) {
  */
 .get('/v0/my-models/*', function (req, res) {
     var path = '/'+req.params[0];
-
-    postData.method = 'Workspace.get';
-    postData.params = [ {objects: [ path ]} ];
-    request.post(WS_URL, {form: JSON.stringify(postData), headers: headers},
-        function (error, response, body) {
-            var d = JSON.parse(body).result[0][0]; // ah, good stuff;
-            if (!error && response.statusCode == 200) {
-                res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
-            }
-        });
+    // do something
 })
 
 
@@ -296,7 +313,7 @@ app.all('/', function(req, res, next) {
  * @apiSampleRequest /publications/
  *
  * @apiSuccess {json} meta List of publication objects.  All values are strings, except 'authors',
- *  which is a an array of strings.
+ *  which is a an array of strings and year, which is an int.
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
  *   [{ "authors": 
@@ -315,12 +332,10 @@ app.all('/', function(req, res, next) {
  *       "publisher": "Nature Publishing Group"
  *    }]
  */
-
 .get('/v0/publications', function (req, res) {
     fs.readFile('./data/publications.json', 'utf8', function (err, data) {
-            var d = data
-            res.send( d );
-        });
+        res.send( data );
+    });
 })
 
 
@@ -329,11 +344,17 @@ app.all('/', function(req, res, next) {
 })
 
 
+
 // sanitize error messages from services
 function sanitizeError(data) {
-    var error = data.error.error.split('_ERROR_');
-    var msg = error[1],
-        debug = error[2].trim();
+    if ('error' in data.error) {
+        var error = data.error.error.split('_ERROR_') ;
+        var msg = error[1],
+            debug = error[2].trim();
+    } else {
+        var msg = data.error.message,
+            debug = '';        
+    }
 
     return {msg: msg, debug: debug};
 }

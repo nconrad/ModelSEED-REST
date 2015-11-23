@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-var express = require('express');
+var express = require('express'),
+    cors = require('cors');
 
 var request 	= require('request'),
     extend      = require('util')._extend,
@@ -29,38 +30,29 @@ var postData = {
 // otherwise, pass on token, if there is one
 if (cliOptions.dev) {
     var token = fs.readFileSync('dev-user-token', 'utf8').trim();
-    console.log('\n\x1b[36m'+'using development token:'+'\x1b[0m', token, '\n')    
+    console.log('\n\x1b[36m'+'using development token:'+'\x1b[0m', token, '\n')
 
     app.all('/', function(req, res, next) {
-        req.header = {"Authorization": token};                   
+        req.header = {"Authorization": token};
         next();
     }).use(function(req, res, next) {
-        req.header = {"Authorization": token};                   
+        req.header = {"Authorization": token};
         next();
     })
 } else {
     app.all('/', function(req, res, next) {
         if ('authentication' in req.headers)
-            req.header = {"Authorization": req.headers.authentication};    
+            req.header = {"Authorization": req.headers.authentication};
         next();
     }).use(function(req, res, next) {
         if ('authentication' in req.headers)
-            req.header = {"Authorization": req.headers.authentication};                 
+            req.header = {"Authorization": req.headers.authentication};
         next();
     })
 }
 
-// CORs 
-app.all('/', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();    
-}).use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();   
-})
-
+// CORs
+app.use(cors())
 
 /**
  * @api {get} /list/:path list objects in a folder
@@ -110,7 +102,7 @@ app.all('/', function(req, res, next) {
 
     var post = extend(postData, {
         method: 'Workspace.ls',
-        params: {paths: [ path ] } 
+        params: {paths: [ path ] }
     })
 
     if ('filter' in req.query && req.query.filter === 'folders')
@@ -277,11 +269,11 @@ app.all('/', function(req, res, next) {
     var post = extend(postData, {
         method: 'Workspace.get',
         params: [ {objects: [ path ]} ]
-    })    
+    })
 
     request.post(WS_URL, {form: JSON.stringify(post), headers: req.header},
         function (error, response, body) {
-            var d = JSON.parse(body).result[0][0]; 
+            var d = JSON.parse(body).result[0][0];
             if (!error && response.statusCode == 200) {
                 res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
             }
@@ -316,7 +308,7 @@ app.all('/', function(req, res, next) {
  *  which is a an array of strings and year, which is an int.
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
- *   [{ "authors": 
+ *   [{ "authors":
  *        [ "Henry, Christopher S",
  *          "DeJongh, Matthew",
  *          "Best, Aaron A",
@@ -353,7 +345,7 @@ function sanitizeError(data) {
             debug = error[2].trim();
     } else {
         var msg = data.error.message,
-            debug = '';        
+            debug = '';
     }
 
     return {msg: msg, debug: debug};

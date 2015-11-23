@@ -23,6 +23,7 @@
   "dependencies": {
     "apidoc": "^0.13.1",
     "comment-parser": "^0.3.0",
+    "cors": "^2.7.1",
     "express": "^4.13.3",
     "jasmine-node": "^1.14.5",
     "q": "^1.4.1",

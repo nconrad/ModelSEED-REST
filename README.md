@@ -23,7 +23,11 @@ Note: `npm install` installs all node module dependencies
 
 ## Start Dev Server
 
-Running `gulp` (or `gulp server` or `npm server.js --dev) starts a development server along with a process to
+```
+node server.js --dev
+```
+
+To make our lives easier, running `gulp` starts a development server along with a process to
 update ./api-documentation.json.  The dev server will restart automatically on file change (any .js file).  For testing, a token can be placed in the file `./dev-user-token`.
 
 ```
@@ -32,10 +36,10 @@ gulp
 
 ## Tests
 
-API tests are ran with `gulp test` or `npm test`.
+API tests are ran with `npm test` or `gulp test`.
 
 ```
-gulp test
+npm test
 ```
 
 
@@ -59,7 +63,7 @@ gulp docs
 The server script `server.js` should be ran with <a href="https://github.com/foreverjs/forever">forever</a>.
 
 ```
-forever start -l /tmp/b --pidFile /tmp/a -a server.js
+forever start -l /logs/server.log --pidFile /tmp/a -a server.js
 ```
 
 

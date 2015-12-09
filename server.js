@@ -14,7 +14,6 @@ cliOptions.version('0.0.1')
            .option('-d, --dev', 'Developer mode; this option attempts to use a token in the file dev-user-token')
            .parse(process.argv);
 
-
 var app = express();
 
 var WS_URL = 'http://p3.theseed.org/services/Workspace';
@@ -39,20 +38,18 @@ if (cliOptions.dev) {
         req.header = {"Authorization": token};
         next();
     })
-} else {
-    app.all('/', function(req, res, next) {
-        if ('authentication' in req.headers)
-            req.header = {"Authorization": req.headers.authentication};
-        next();
-    }).use(function(req, res, next) {
-        if ('authentication' in req.headers)
-            req.header = {"Authorization": req.headers.authentication};
-        next();
-    })
 }
 
 // CORs
 app.use(cors())
+
+// Logging
+app.use(function(req, res, next) {
+    console.log('%s %s', req.method, req.url);
+    next();
+});
+
+
 
 /**
  * @api {get} /list/:path list objects in a folder
@@ -97,7 +94,7 @@ app.use(cors())
  *        }
  *      ]
  */
-.get('/v0/list/*', function (req, res) {
+app.get('/v0/list/*', AuthRequired, function(req, res) {
     var path = '/'+req.params[0];
 
     var post = extend(postData, {
@@ -162,7 +159,7 @@ app.use(cors())
  *        "shockUrl": ""
  *      }
  */
-.get('/v0/meta/*', function (req, res) {
+.get('/v0/meta/*', AuthRequired, function(req, res) {
     var path = '/'+req.params[0];
 
     var post = extend(postData, {
@@ -199,7 +196,7 @@ app.use(cors())
  *       "data": {}
  *     }
  */
-.get('/v0/objects/*', function (req, res) {
+.get('/v0/objects/*', AuthRequired, function (req, res) {
     var path = '/'+req.params[0];
 
     var post = extend(postData, {
@@ -209,7 +206,7 @@ app.use(cors())
 
     request.post(WS_URL, {form: JSON.stringify(post), headers: req.header},
         function (error, response, body) {
-            var data = JSON.parse(body)
+            var data = JSON.parse(body);
 
             if (!('result' in data)) {
                 var e = sanitizeError(data);
@@ -230,7 +227,7 @@ app.use(cors())
  *
  * @apiSuccess {Model Object} A parsed and sanitized model object
  */
-.get('/v0/model/*', function (req, res) {
+.get('/v0/model/*', AuthRequired, function (req, res) {
     var path = '/'+req.params[0];
 
     var post = extend(postData, {
@@ -288,10 +285,10 @@ app.use(cors())
  *
  * @apiParam {string} path Path to workspace object
  *
- * @apiSuccess {fba object} A parsed and sanitized fba object
+ * @apiSuccess { object} Metadata on user's models
  *
  */
-.get('/v0/my-models/*', function (req, res) {
+.get('/v0/my-models/*', AuthRequired, function (req, res) {
     var path = '/'+req.params[0];
     // do something
 })
@@ -330,17 +327,14 @@ app.use(cors())
     });
 })
 
-
 .get('/test', function (req, res) {
-    res.send( 'hello world' );
+    res.send( 'This is just a test. This is only a test.' );
 })
-
-
 
 // sanitize error messages from services
 function sanitizeError(data) {
     if ('error' in data.error) {
-        var error = data.error.error.split('_ERROR_') ;
+        var error = data.error.error.split('_ERROR_');
         var msg = error[1],
             debug = error[2].trim();
     } else {
@@ -349,6 +343,15 @@ function sanitizeError(data) {
     }
 
     return {msg: msg, debug: debug};
+}
+
+function AuthRequired(req, res, next) {
+    if ('authorization' in req.headers) {
+        req.header = {"Authorization": req.headers.authorization};
+        next();
+    } else {
+        res.status(401).send( {error: 'Auth is required!'} );
+    }
 }
 
 // sanitize workspace meta data list into dictionary

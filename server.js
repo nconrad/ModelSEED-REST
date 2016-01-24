@@ -1,22 +1,24 @@
 #!/usr/bin/env node
-var express = require('express'),
-    cors = require('cors');
+var app     = require('express')(),
+    http    = require('http').Server(app),
+    cors    = require('cors')
 
-var request 	= require('request'),
-    extend      = require('util')._extend,
-    cliOptions 	= require('commander'),
-    fs  		= require('fs'),
-    modelParser = require('./parsers/model.js'),
-    fbaParser 	= require('./parsers/fba.js');
+var request         = require('request'),
+    extend          = require('util')._extend,
+    cliOptions 	    = require('commander'),
+    fs              = require('fs'),
+    modelParser     = require('./parsers/model.js'),
+    fbaParser       = require('./parsers/fba.js');
 
 
 cliOptions.version('0.0.1')
-           .option('-d, --dev', 'Developer mode; this option attempts to use a token in the file dev-user-token')
+           .option('-d, --dev', 'Developer mode; this option attempts to use a token in the file: dev-user-token')
            .parse(process.argv);
 
-var app = express();
 
-var WS_URL = 'http://p3.theseed.org/services/Workspace';
+var WS_URL  = 'http://p3.theseed.org/services/Workspace',
+    MS_URL  = 'https://p3.theseed.org/services/ProbModelSEED',
+    APP_URL = 'http://p3.theseed.org/services/app_service';
 
 // default RPC request data structure
 var postData = {
@@ -24,6 +26,12 @@ var postData = {
     method: null,
     params: null
 };
+
+// user's sockets
+var userClients = {},
+    sockets = {},
+    anonymousCount = 0;
+
 
 // if --dev option is used, set token to token in file "dev-user-token"
 // otherwise, pass on token, if there is one
@@ -41,14 +49,13 @@ if (cliOptions.dev) {
 }
 
 // CORs
-app.use(cors())
+app.use(cors());
 
 // Logging
 app.use(function(req, res, next) {
     console.log('%s %s', req.method, req.url);
     next();
 });
-
 
 
 /**
@@ -215,7 +222,15 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
             }
 
             var d = data.result[0][0];
-            res.send( {meta: d[0], data: modelParser.parse(JSON.parse(d[1])) } );
+
+            // content may or may not be json :(
+            try {
+                var obj = JSON.parse(d[1]);
+            } catch (e) {
+                obj = d[1]
+            }
+
+            res.send( {meta: d[0], data: obj } );
         });
 })
 
@@ -372,7 +387,9 @@ function sanitizeMeta(l) {
     };
 }
 
-var server = app.listen(3000, function () {
+
+
+var server = http.listen(3000, function () {
     var host = server.address().address;
     var port = server.address().port;
 

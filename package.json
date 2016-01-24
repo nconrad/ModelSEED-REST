@@ -26,8 +26,10 @@
     "cors": "^2.7.1",
     "express": "^4.13.3",
     "jasmine-node": "^1.14.5",
+    "promised-io": "^0.3.5",
     "q": "^1.4.1",
-    "request": "^2.65.0"
+    "request": "^2.65.0",
+    "socket.io": "^1.3.7"
   },
   "devDependencies": {
     "commander": "^2.9.0",

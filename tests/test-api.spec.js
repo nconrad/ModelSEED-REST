@@ -52,7 +52,6 @@ describe("ModelSEED REST API GET Requests", function() {
     describe("GET /objects/:path", function() {
         it("requires auth", function(done) {
             request.get({url: testModel, json: true}, function(error, response, body) {
-                console.log('body', body)
                 expect(response.statusCode).toBe(401);
                 expect('error' in body).toBe(true);
                 done();

@@ -1,15 +1,16 @@
 #!/usr/bin/env node
-var app     = require('express')(),
-    http    = require('http').Server(app),
-    cors    = require('cors')
+var app         = require('express')(),
+    http        = require('http').Server(app),
+    cors        = require('cors'),
+    bodyParser  = require('body-parser');
 
 var request         = require('request'),
+    nodemailer      = require("nodemailer"),
     extend          = require('util')._extend,
     cliOptions 	    = require('commander'),
     fs              = require('fs'),
     modelParser     = require('./parsers/model.js'),
     fbaParser       = require('./parsers/fba.js');
-
 
 cliOptions.version('0.0.1')
            .option('-d, --dev', 'Developer mode; this option attempts to use a token in the file: dev-user-token')
@@ -48,10 +49,12 @@ if (cliOptions.dev) {
     })
 }
 
-// CORs
-app.use(cors());
+// Configure CORs and body parser.
+app.use( cors() )
+   .use( bodyParser.urlencoded({extended: false, limit: '50mb'}) )
 
-// Logging
+
+// Configure Logging
 app.use(function(req, res, next) {
     console.log('%s %s', req.method, req.url);
     next();
@@ -342,8 +345,48 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
     });
 })
 
+/**
+ * @api {post} /feedback/ post user feedback
+ * @apiName feedback
+ */
+.post('/v0/feedback', function (req, res) {
+    var fb = JSON.parse(req.body.feedback);
+
+    var transporter = nodemailer.createTransport({
+        port: 25,
+        direct: false,
+        secure: false,
+        ignoreTLS: true
+    });
+
+    var mailOptions = {
+        from: 'nconrad@anl.gov',
+        to: 'nconrad@anl.gov',         // list of receivers
+        subject: 'ModelSEED Feedback from Website',
+        text: '',
+        html: 'Message: '+fb.note+'<br><br>'+
+              'URL: '+fb.url+'<br><br>'+
+              'Browser: '+'<br>'+
+                '<pre>'+JSON.stringify(fb.browser, null, 4)+'</pre><br><br>'+
+              '<img src="'+fb.img+'"><br>'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: ' + info.response);
+    });
+
+    res.status(200).send('Feedback was accepted, thanks!');
+})
+
+
+/**
+ * Just a test method.
+*/
 .get('/test', function (req, res) {
-    res.send( 'This is just a test. This is only a test.' );
+    res.status(200).send( 'This is just a test. This is only a test.' );
 })
 
 // sanitize error messages from services

@@ -373,12 +373,13 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
 
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
+            res.status(500).send({'msg': 'Was not able to deliver message.'});
             return console.log(error);
         }
         console.log('Message sent: ' + info.response);
-    });
 
-    res.status(200).send('Feedback was accepted, thanks!');
+        res.status(200).send({'msg': 'Your feedback was accepted, thanks!'});
+    });
 })
 
 

@@ -2,7 +2,6 @@
 
 exports.parse = function(data) {
 
-
     var compartNameMapping = {
         "c":"Cytosol",
         "p":"Periplasm",
@@ -25,9 +24,6 @@ exports.parse = function(data) {
     this.genehash = {};
     this.gfhash = {};
 
-    // this.modelreactions = data.modelreactions;
-    // this.modelcompounds = data.modelcompounds;
-    // this.modelcompartments = data.modelcompartments;
 
     var reactions = [],
         compounds = [],
@@ -42,10 +38,8 @@ exports.parse = function(data) {
 
     // create gapfilling hash
     for (var i=0; i < this.gapfillings.length; i++) {
-
         this.gapfillings[i].simpid = "gf."+(i+1);
         this.gfhash[this.gapfillings[i].simpid] = this.gapfillings[i];
-        //gappfillings.push({integrated: })
     }
 
     for (var i=0; i< data.modelcompartments.length; i++) {
@@ -55,11 +49,11 @@ exports.parse = function(data) {
         this.cmphash[cmp.id] = cmp;
 
         compartments.push({
-                            id: cmp.id,
-                            name: cmp.name,
-                            pH: cmp.pH,
-                            potential: cmp.potential
-                         })
+            id: cmp.id,
+            name: cmp.name,
+            pH: cmp.pH,
+            potential: cmp.potential
+        })
     }
 
     for (var i=0; i< data.modelcompounds.length; i++) {
@@ -71,11 +65,13 @@ exports.parse = function(data) {
             compartment = cpd.modelcompartment_ref.split("/").pop(),
             name = cpd.name.replace(/_[a-zA-z]\d+$/, '');
 
-        var obj = {id: id,
-                   name: name,
-                   formula: cpd.formula,
-                   charge: cpd.charge,
-                   compartment: compartment}
+        var obj = {
+            id: id,
+            name: name,
+            formula: cpd.formula,
+            charge: cpd.charge,
+            compartment: compartment
+        }
 
         cpd.name = name;
         cpd.compartName = compartNameMapping[compartment[0]]+' '+compartment[1];
@@ -272,13 +268,14 @@ exports.parse = function(data) {
                        summary: summary}
         }
 
-        reactions.push({name: name,
-                        id: id,
-                        compartment: compartment,
-                        eq: eq,
-                        genes: rxn.genes,
-                        gapfill: gapfill || false
-                      })
+        reactions.push({
+            name: name,
+            id: id,
+            compartment: compartment,
+            eq: eq,
+            genes: rxn.genes,
+            gapfill: gapfill || false
+        })
     }
 
     return {
@@ -288,16 +285,4 @@ exports.parse = function(data) {
         compartments: compartments,
         biomass: biomasses
     };
-
-
-
-    /*
-    return {cpdhash: this.cpdhash,
-            biohash: this.biohash,
-            rxnhash: this.rxnhash,
-            cmphash: this.cmphash,
-            genehash: this.genehash,
-            gfhash: this.gfhash,
-            parse: this.parse}
-    */
 }

@@ -243,9 +243,9 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
  *
  * @apiParam {string} path Path to workspace object
  *
- * @apiSuccess {Model Object} A parsed and sanitized model object
+ * @apiSuccess {Model Object} A parsed and sanitized model object.  Great for model tables.
  */
-.get('/v0/model/*', AuthRequired, function (req, res) {
+.get('/v0/model/*', AuthRequired, (req, res) => {
     var path = '/'+req.params[0];
 
     var post = extend(postData, {
@@ -253,19 +253,33 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
         params: [ {objects: [ path ]} ]
     })
 
-    request.post(WS_URL, {form: JSON.stringify(post), headers: req.header},
-        function (error, response, body) {
-            var data = JSON.parse(body);
-
-            if (!('result' in data)) {
+    request.post(WS_URL, {json: post, headers: req.header},
+        (error, response, body) => {
+            if (!('result' in body)) {
                 var e = sanitizeError(data);
                 res.status(520).send( e );
                 return;
             }
 
-            var d = data.result[0][0];
+            var meta = body.result[0][0][0],
+                data = body.result[0][0][1];
 
-            res.send( {meta: sanitizeMeta(d[0]), data: modelParser.parse(JSON.parse(d[1])) } );
+            var meta = sanitizeMeta(meta);
+
+            // if data is stored in shock, fetch;
+            // otherwise, error
+            if (meta.shockUrl.length > 0) {
+                getShockData(meta.shockUrl, req.header.Authorization,
+                    (d) => {
+                        res.send({
+                            meta: meta,
+                            data: modelParser.parse(JSON.parse(d))
+                        });
+                    })
+            } else {
+                res.status(520).send( {msg: 'No node was found for shock data.'} );
+                return;
+            }
         });
 })
 
@@ -382,13 +396,19 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
     });
 })
 
-
 /**
- * Just a test method.
-*/
-.get('/test', function (req, res) {
+ * @api {get} /test-service/  Way to test simple, unauthenticated GET request.
+ * @apiName test-service
+ *
+ * @apiSampleRequest /test-server/
+ *
+ * @apiSuccess {json} string Should return code 200 with string "This is just a test. This is only a test."
+ *
+ */
+.get('/test-service', function (req, res) {
     res.status(200).send( 'This is just a test. This is only a test.' );
 })
+
 
 // sanitize error messages from services
 function sanitizeError(data) {
@@ -431,9 +451,15 @@ function sanitizeMeta(l) {
     };
 }
 
+function getShockData(node, token, cb) {
+    var url = node+'?download',
+        header = {headers: {Authorization: 'OAuth '+token}};
+
+    request(url, header, (error, response, body) => { cb(body); })
+}
 
 
-var server = http.listen(3000, function () {
+var server = http.listen(3000, () => {
     var host = server.address().address;
     var port = server.address().port;
 

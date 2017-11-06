@@ -374,9 +374,9 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
     });
 
     var mailOptions = {
-        from: 'nconrad@anl.gov',
-        to: 'nconrad@anl.gov',         // list of receivers
-        subject: 'ModelSEED Feedback from Website',
+        from: 'help@modelseed.org',
+        to: 'help@modelseed.org',         // list of receivers
+        subject: 'MODELSEED-78',
         text: '',
         html: 'Message: '+fb.note+'<br><br>'+
               'URL: '+fb.url+'<br><br>'+
@@ -387,12 +387,12 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
 
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
-            res.status(500).send({'msg': 'Was not able to deliver message.'});
+            res.status(500).send({'msg': 'Was not able to send feedback.'});
             return console.log(error);
         }
-        console.log('Message sent: ' + info.response);
+        console.log('Feedback sent: ' + info.response);
 
-        res.status(200).send({'msg': 'Your feedback was accepted, thanks!'});
+        res.status(200).send({'msg': 'Your feedback was sent. Thank you!'});
     });
 })
 

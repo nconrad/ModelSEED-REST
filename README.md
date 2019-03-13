@@ -106,6 +106,10 @@ Comments sent: 250 2.0.0 Ok: queued as 73752191F0A2
 
 And in my email inbox I'd have received the above `mail content`.
 
+If the email recipient is `help@modelseed.org`, then anyone on the list will receive the email AND the Jira ticket at
+https://jira.cels.anl.gov/browse/MODELSEED-113
+will record the email content as a comment.
+
 
 ## Contributing
 

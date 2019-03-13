@@ -66,6 +66,46 @@ The server script `server.js` should be ran with <a href="https://github.com/for
 forever start -l /logs/server.log --pidFile /tmp/a -a server.js
 ```
 
+## Local testing
+
+In addition to starting the dev server instance as mentioned above in ```## Start Dev Serve```, in order for the nodemailer's transporter.sendMail() to succeed, a local Postfix mail system needs to be started by running:
+
+```
+sudo postfix start
+```
+
+Then you can test if the Postfix mail system is running with these commands:
+
+```
+echo hello | sendmail user@domain
+
+mailq
+```
+
+The `mailq` command will show the mail queue content.
+
+When modelseed-ui is running in localhost:8089 and a user comment is sent, the server.js
+screen will have something like the following:
+
+```
+POST /v0/comments
+request string:
+ {"comment":{"user":{"username":"qzhang"},"rowId":"cpd00002","comments":["bad formula","bad structure"]}}
+comment data:
+ { user: { username: 'qzhang' },
+  rowId: 'cpd00002',
+  comments: [ 'bad formula', 'bad structure' ] }
+mail content:
+ { from: 'help@modelseed.org',
+  to: 'qzhang@anl.gov',
+  subject: 'MODELSEED-113',
+  text: '',
+  html: 'Message: [\n    "bad formula",\n    "bad structure"\n]<br><br>Id: cpd00002<br><br>User: <br><pre>{\n    "username": "qzhang"\n}</pre><br><br>' }
+Comments sent: 250 2.0.0 Ok: queued as 73752191F0A2
+```
+
+And in my email inbox I'd have received the above `mail content`.
+
 
 ## Contributing
 
@@ -78,7 +118,6 @@ forever start -l /logs/server.log --pidFile /tmp/a -a server.js
 ## Author(s)
 
 Neal Conrad <nconrad@anl.gov>
-
 
 ## License
 

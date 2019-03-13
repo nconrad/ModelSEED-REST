@@ -497,7 +497,6 @@ function getShockData(node, token, cb) {
     request(url, header, (error, response, body) => { cb(body); })
 }
 
-
 var server = http.listen(3000, () => {
     var host = server.address().address;
     var port = server.address().port;

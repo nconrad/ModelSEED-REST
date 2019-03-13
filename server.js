@@ -375,7 +375,11 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
 
     var mailOptions = {
         from: 'help@modelseed.org',
+<<<<<<< HEAD
+        to: 'qzhang@anl.gov',         // list of receivers
+=======
         to: 'help@modelseed.org,seaver@anl.gov',         // list of receivers
+>>>>>>> 3e729e307b1f95ba0556adbe4df0aec5085278f2
         subject: 'MODELSEED-78',
         text: '',
         html: 'Message: '+fb.note+'<br><br>'+
@@ -396,6 +400,45 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
         console.log('Feedback sent: ' + info.response);
 
         res.status(200).send({'msg': 'Your feedback was sent. Thank you!'});
+    });
+})
+
+/**
+ * @api {post} /comments/ post user comments
+ * @apiName comments
+ */
+.post('/v0/comments', function (req, res) {
+    console.log('request string:\n', Object.keys(req.body)[0]);
+    var cm = JSON.parse(Object.keys(req.body)[0]);
+    console.log('comment data:\n', cm.comment)
+    var transporter = nodemailer.createTransport({
+        port: 25,
+        direct: false,
+        secure: false,
+        ignoreTLS: true
+    });
+
+    var mailOptions = {
+        from: 'help@modelseed.org',
+        to: 'help@modelseed.org', // list of receivers
+        subject: 'MODELSEED-113',
+        text: '',
+        html: 'Message: '+ JSON.stringify(cm.comment.comments, null, 4)+'<br><br>'+
+              'Id: '+cm.comment.rowId+'<br><br>'+
+              'User: '+'<br>'+
+                '<pre>'+JSON.stringify(cm.comment.user, null, 4)+'</pre><br><br>'
+    };
+    console.log('mail content: \n', mailOptions);
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            res.status(500).send({'msg': 'Was not able to send comments.'});
+            console.log(error);
+            return console.log(error);
+        }
+        console.log('Comments sent: ' + info.response);
+
+        res.status(200).send({'msg': 'Your comments was sent. Thank you!'});
     });
 })
 
@@ -460,7 +503,6 @@ function getShockData(node, token, cb) {
 
     request(url, header, (error, response, body) => { cb(body); })
 }
-
 
 var server = http.listen(3000, () => {
     var host = server.address().address;

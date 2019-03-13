@@ -375,14 +375,21 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
 
     var mailOptions = {
         from: 'help@modelseed.org',
+<<<<<<< HEAD
         to: 'qzhang@anl.gov',         // list of receivers
+=======
+        to: 'help@modelseed.org,seaver@anl.gov',         // list of receivers
+>>>>>>> 3e729e307b1f95ba0556adbe4df0aec5085278f2
         subject: 'MODELSEED-78',
         text: '',
         html: 'Message: '+fb.note+'<br><br>'+
               'URL: '+fb.url+'<br><br>'+
               'Browser: '+'<br>'+
                 '<pre>'+JSON.stringify(fb.browser, null, 4)+'</pre><br><br>'+
-              '<img src="'+fb.img+'"><br>'
+	       '<img src="'+fb.img+'"><br>',
+	attachments: [ { 'filename' : 'img',
+			 'content'  : fb.img,
+			 'encoding' : 'base64' } ]
     };
 
     transporter.sendMail(mailOptions, function(error, info){

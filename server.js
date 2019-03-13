@@ -413,7 +413,7 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
 
     var mailOptions = {
         from: 'help@modelseed.org',
-        to: 'qzhang@anl.gov',         // list of receivers
+        to: 'help@modelseed.org', // list of receivers
         subject: 'MODELSEED-113',
         text: '',
         html: 'Message: '+ JSON.stringify(cm.comment.comments, null, 4)+'<br><br>'+

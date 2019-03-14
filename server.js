@@ -53,7 +53,6 @@ if (cliOptions.dev) {
 app.use( cors() )
    .use( bodyParser.urlencoded({extended: false, limit: '50mb'}) )
 
-
 // Configure Logging
 app.use(function(req, res, next) {
     console.log('%s %s', req.method, req.url);
@@ -404,9 +403,8 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
  * @apiName comments
  */
 .post('/v0/comments', function (req, res) {
-    console.log('request string:\n', Object.keys(req.body)[0]);
-    var cm = JSON.parse(Object.keys(req.body)[0]);
-    console.log('comment data:\n', cm.comment)
+    var cm = JSON.parse(req.body.comment);
+    console.log('comment data:\n', cm)
     var transporter = nodemailer.createTransport({
         port: 25,
         direct: false,
@@ -419,10 +417,10 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
         to: 'help@modelseed.org', // list of receivers
         subject: 'MODELSEED-113',
         text: '',
-        html: 'Message: '+ JSON.stringify(cm.comment.comments, null, 4)+'<br><br>'+
-              'Id: '+cm.comment.rowId+'<br><br>'+
+        html: 'Message: '+ JSON.stringify(cm.comments, null, 4)+'<br><br>'+
+              'Id: '+cm.rowId+'<br><br>'+
               'User: '+'<br>'+
-                '<pre>'+JSON.stringify(cm.comment.user, null, 4)+'</pre><br><br>'
+                '<pre>'+JSON.stringify(cm.user, null, 4)+'</pre><br><br>'
     };
     console.log('mail content: \n', mailOptions);
 
@@ -504,5 +502,5 @@ var server = http.listen(3000, () => {
     var host = server.address().address;
     var port = server.address().port;
 
-    console.log('Example app listening at http://%s:%s', host, port);
+    console.log('Express app listening at http://%s:%s', host, port);
 });

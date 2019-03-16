@@ -432,7 +432,7 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
         }
         console.log('Comments sent: ' + info.response);
 
-        res.status(200).send({'msg': 'Your comments was sent. Thank you!'});
+        res.status(200).send({'msg': 'Your comments were sent and will be carefully addressed. Thank you!'});
     });
 })
 

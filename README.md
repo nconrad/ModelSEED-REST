@@ -68,10 +68,12 @@ forever start -l /logs/server.log --pidFile /tmp/a -a server.js
 
 ## Local testing
 
-In addition to starting the dev server instance as mentioned above in ```## Start Dev Serve```, in order for the nodemailer's transporter.sendMail() to succeed, a local Postfix mail system needs to be started by running:
+In addition to starting the dev server instance as mentioned above in ```## Start Dev Server```, in order for the nodemailer's transporter.sendMail() to succeed, a local Postfix mail system needs to be started by running:
 
 ```
 sudo postfix start
+
+###If Postfix is already running, you will get 'postfix/postfix-script: fatal: the Postfix mail system is already running' error.
 ```
 
 Then you can test if the Postfix mail system is running with these commands:

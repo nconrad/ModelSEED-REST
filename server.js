@@ -361,7 +361,9 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
 /**
  * @api {post} /feedback/ post user feedback
  * @apiName feedback
+ * This is the implementation using the Feedback lib which we want to phase out.
  */
+/*
 .post('/v0/feedback', function (req, res) {
     var fb = JSON.parse(req.body.feedback);
 
@@ -395,6 +397,43 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
         console.log('Feedback sent: ' + info.response);
 
         res.status(200).send({'msg': 'Your feedback was sent. Thank you!'});
+    });
+})
+*/
+/**
+ * @api {post} /feedback/ post user feedback
+ * @apiName feedback
+ */
+.post('/v0/feedback', function (req, res) {
+    var fd = JSON.parse(req.body.comment);
+    console.log('feedback data:\n', fd)
+    var transporter = nodemailer.createTransport({
+        port: 25,
+        direct: false,
+        secure: false,
+        ignoreTLS: true
+    });
+
+    var mailOptions = {
+        from: 'help@modelseed.org',
+        to: 'help@modelseed.org', // list of receivers
+        subject: 'MODELSEED-78',
+        text: '',
+        html: 'Message: '+ JSON.stringify(fd.comments, null, 4)+'<br><br>'+
+              'User: '+'<br>'+
+                '<pre>'+JSON.stringify(fd.user, null, 4)+'</pre><br><br>'
+    };
+    console.log('mail content: \n', mailOptions);
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            res.status(500).send({'msg': 'Was not able to send feedback.'});
+            console.log(error);
+            return console.log(error);
+        }
+        console.log('Feedback sent: ' + info.response);
+
+        res.status(200).send({'msg': 'Your feedback was sent and will be carefully addressed. Thank you!'});
     });
 })
 

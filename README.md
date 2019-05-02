@@ -68,10 +68,12 @@ forever start -l /logs/server.log --pidFile /tmp/a -a server.js
 
 ## Local testing
 
-In addition to starting the dev server instance as mentioned above in ```## Start Dev Serve```, in order for the nodemailer's transporter.sendMail() to succeed, a local Postfix mail system needs to be started by running:
+In addition to starting the dev server instance as mentioned above in ```## Start Dev Server```, in order for the nodemailer's transporter.sendMail() to succeed, a local Postfix mail system needs to be started by running:
 
 ```
 sudo postfix start
+
+###If Postfix is already running, you will get 'postfix/postfix-script: fatal: the Postfix mail system is already running' error.
 ```
 
 Then you can test if the Postfix mail system is running with these commands:
@@ -105,6 +107,10 @@ Comments sent: 250 2.0.0 Ok: queued as 73752191F0A2
 ```
 
 And in my email inbox I'd have received the above `mail content`.
+
+If the email recipient is `help@modelseed.org`, then anyone on the list will receive the email AND the Jira ticket at
+https://jira.cels.anl.gov/browse/MODELSEED-113
+will record the email content as a comment.
 
 
 ## Contributing

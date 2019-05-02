@@ -22,7 +22,7 @@
   "homepage": "https://github.com/nconrad/ModelSEED-REST",
   "dependencies": {
     "apidoc": "^0.17.7",
-    "body-parser": "^1.15.0",
+    "body-parser": "^1.18.3",
     "comment-parser": "^0.3.0",
     "cors": "^2.7.1",
     "express": "^4.13.3",

@@ -53,7 +53,6 @@ if (cliOptions.dev) {
 app.use( cors() )
    .use( bodyParser.urlencoded({extended: false, limit: '50mb'}) )
 
-
 // Configure Logging
 app.use(function(req, res, next) {
     console.log('%s %s', req.method, req.url);
@@ -364,8 +363,8 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
  * @apiName feedback
  */
 .post('/v0/feedback', function (req, res) {
-    var fb = JSON.parse(req.body.feedback);
-
+    var fd = JSON.parse(req.body.comment);
+    console.log('feedback data:\n', fd)
     var transporter = nodemailer.createTransport({
         port: 25,
         direct: false,
@@ -375,24 +374,62 @@ app.get('/v0/list/*', AuthRequired, function(req, res) {
 
     var mailOptions = {
         from: 'help@modelseed.org',
-        to: 'help@modelseed.org',         // list of receivers
+        to: 'help@modelseed.org', // list of receivers
         subject: 'MODELSEED-78',
         text: '',
-        html: 'Message: '+fb.note+'<br><br>'+
-              'URL: '+fb.url+'<br><br>'+
-              'Browser: '+'<br>'+
-                '<pre>'+JSON.stringify(fb.browser, null, 4)+'</pre><br><br>'+
-              '<img src="'+fb.img+'"><br>'
+        html: 'Message: '+ JSON.stringify(fd.comments, null, 4)+'<br><br>'+
+              'User: '+'<br>'+
+                '<pre>'+JSON.stringify(fd.user, null, 4)+'</pre><br><br>'
     };
+    console.log('mail content: \n', mailOptions);
 
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
             res.status(500).send({'msg': 'Was not able to send feedback.'});
+            console.log(error);
             return console.log(error);
         }
         console.log('Feedback sent: ' + info.response);
 
-        res.status(200).send({'msg': 'Your feedback was sent. Thank you!'});
+        res.status(200).send({'msg': 'Your feedback was sent and will be carefully addressed. Thank you!'});
+    });
+})
+
+/**
+ * @api {post} /comments/ post user comments
+ * @apiName comments
+ */
+.post('/v0/comments', function (req, res) {
+    var cm = JSON.parse(req.body.comment);
+    console.log('comment data:\n', cm)
+    var transporter = nodemailer.createTransport({
+        port: 25,
+        direct: false,
+        secure: false,
+        ignoreTLS: true
+    });
+
+    var mailOptions = {
+        from: 'help@modelseed.org',
+        to: 'help@modelseed.org', // list of receivers
+        subject: 'MODELSEED-113',
+        text: '',
+        html: 'Message: '+ JSON.stringify(cm.comments, null, 4)+'<br><br>'+
+              'Id: '+cm.rowId+'<br><br>'+
+              'User: '+'<br>'+
+                '<pre>'+JSON.stringify(cm.user, null, 4)+'</pre><br><br>'
+    };
+    console.log('mail content: \n', mailOptions);
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            res.status(500).send({'msg': 'Was not able to send comments.'});
+            console.log(error);
+            return console.log(error);
+        }
+        console.log('Comments sent: ' + info.response);
+
+        res.status(200).send({'msg': 'Your comments were sent and will be carefully addressed. Thank you!'});
     });
 })
 
@@ -458,10 +495,9 @@ function getShockData(node, token, cb) {
     request(url, header, (error, response, body) => { cb(body); })
 }
 
-
 var server = http.listen(3000, () => {
     var host = server.address().address;
     var port = server.address().port;
 
-    console.log('Example app listening at http://%s:%s', host, port);
+    console.log('Express app listening at http://%s:%s', host, port);
 });

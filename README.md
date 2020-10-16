@@ -15,11 +15,11 @@ node
 ```
 git clone https://github.com/nconrad/ModelSEED-REST.git
 cd ModelSEED-REST
-npm install
+npm install --production
 ```
 
 Note: `npm install` installs all node module dependencies
-
+But: `npm install --production` will only install node dependencies required for the server to run
 
 ## Start Dev Server
 
@@ -63,7 +63,7 @@ gulp docs
 The server script `server.js` should be ran with <a href="https://github.com/foreverjs/forever">forever</a>.
 
 ```
-forever start -l /logs/server.log --pidFile /tmp/a -a server.js
+forever start -l ./logs/server.log --pidFile forever.pid -a server.js
 ```
 
 ## Local testing

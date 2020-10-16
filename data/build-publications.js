@@ -59,7 +59,7 @@ function main() {
     }
 
     var publications = publications.slice(1); // skip header
-    console.log(JSON.stringify(publications));
+    console.log(JSON.stringify(publications, null, 4));
     process.exit(0);
 }
 

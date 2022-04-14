@@ -9,15 +9,15 @@
             "Karp, Peter D",
             "Broadbelt, Linda J",
             "Hatzimanikatis, Vassily",
-            "Palsson, Bernhard í"
+            "Palsson, Bernhard Ø"
         ],
-        "title": "A genome-scale metabolic reconstruction for Escherichia coli K-12 MG1655 that accounts for 1260 ORFs and thermodynamic information",
+        "title": "A genome‐scale metabolic reconstruction for Escherichia coli K‐12 MG1655 that accounts for 1260 ORFs and thermodynamic information",
         "publication": "Molecular systems biology",
         "volumn": "3",
         "number": "1",
         "pages": "121",
         "year": 2007,
-        "publisher": "EMBO Press"
+        "publisher": "John Wiley & Sons, Ltd Chichester, UK"
     },
     {
         "authors": [
@@ -63,7 +63,7 @@
         "number": "8",
         "pages": "1603-1609",
         "year": 2005,
-        "publisher": "Oxford Univ Press"
+        "publisher": "Oxford University Press"
     },
     {
         "authors": [
@@ -92,7 +92,7 @@
         "title": "Computational discovery of biochemical routes to specialty chemicals",
         "publication": "Chemical engineering science",
         "volumn": "59",
-        "number": "22",
+        "number": "22-23",
         "pages": "5051-5060",
         "year": 2004,
         "publisher": "Pergamon"
@@ -136,12 +136,12 @@
             "Gates, Lewis E"
         ],
         "title": "How to scale-up mixing processes in non-Newtonian fluids",
-        "publication": "Chemical engineering progress",
+        "publication": "Chem Eng Prog",
         "volumn": "99",
         "number": "5",
         "pages": "44-52",
         "year": 2003,
-        "publisher": "American Institute of Chemical Engineers (AIChE)"
+        "publisher": null
     },
     {
         "authors": [
@@ -149,7 +149,7 @@
             "Broadbelt, Linda J",
             "Hatzimanikatis, Vassily"
         ],
-        "title": "Discovery and analysis of novel metabolic pathways for the biosynthesis of industrial chemicals: 3-hydroxypropanoate",
+        "title": "Discovery and analysis of novel metabolic pathways for the biosynthesis of industrial chemicals: 3‐hydroxypropanoate",
         "publication": "Biotechnology and bioengineering",
         "volumn": "106",
         "number": "3",
@@ -169,7 +169,7 @@
         "number": "7",
         "pages": "695-704",
         "year": 2010,
-        "publisher": "Wiley Online Library"
+        "publisher": "WILEY‐VCH Verlag Weinheim"
     },
     {
         "authors": [
@@ -195,7 +195,7 @@
         "number": "",
         "pages": "",
         "year": 2007,
-        "publisher": "NORTHWESTERN UNIVERSITY"
+        "publisher": "Northwestern University"
     },
     {
         "authors": [
@@ -210,7 +210,7 @@
         "number": "",
         "pages": "209-215",
         "year": 2010,
-        "publisher": "Springer Berlin Heidelberg"
+        "publisher": "Springer, Berlin, Heidelberg"
     },
     {
         "authors": [
@@ -246,12 +246,12 @@
             "Gilbert, Jack A"
         ],
         "title": "Predicted Relative Metabolomic Turnover (PRMT): determining metabolic turnover from a coastal marine metagenomic dataset",
-        "publication": "Microb Inform Exp",
+        "publication": "Microbial informatics and experimentation",
         "volumn": "1",
-        "number": "4",
-        "pages": "",
+        "number": "1",
+        "pages": "1-11",
         "year": 2011,
-        "publisher": null
+        "publisher": "BioMed Central"
     },
     {
         "authors": [
@@ -268,8 +268,8 @@
         "title": "Competitive and cooperative metabolic interactions in bacterial communities",
         "publication": "Nature communications",
         "volumn": "2",
-        "number": "",
-        "pages": "589",
+        "number": "1",
+        "pages": "1-7",
         "year": 2011,
         "publisher": "Nature Publishing Group"
     },
@@ -319,7 +319,7 @@
         "number": "15",
         "pages": "5379-5395",
         "year": 2012,
-        "publisher": "Oxford University Press"
+        "publisher": "Oxford University Press UK"
     },
     {
         "authors": [
@@ -335,12 +335,12 @@
             "Pusch, Gordon D"
         ],
         "title": "SEED servers: high-performance access to the SEED genomes, annotations, and metabolic models",
-        "publication": null,
-        "volumn": "",
-        "number": "",
-        "pages": "",
+        "publication": "PloS one",
+        "volumn": "7",
+        "number": "10",
+        "pages": "e48053",
         "year": 2012,
-        "publisher": null
+        "publisher": "Public Library of Science"
     },
     {
         "authors": [
@@ -357,10 +357,10 @@
         ],
         "title": "Building the repertoire of dispensable chromosome regions in Bacillus subtilis entails major refinement of cognate large-scale metabolic model",
         "publication": "Nucleic acids research",
-        "volumn": "",
-        "number": "",
-        "pages": "gks963",
-        "year": 2012,
+        "volumn": "41",
+        "number": "1",
+        "pages": "687-699",
+        "year": 2013,
         "publisher": "Oxford University Press"
     },
     {
@@ -378,7 +378,7 @@
         "number": "",
         "pages": "17-45",
         "year": 2013,
-        "publisher": "Humana Press"
+        "publisher": "Humana Press, Totowa, NJ"
     },
     {
         "authors": [
@@ -399,21 +399,6 @@
     },
     {
         "authors": [
-            "DeJongh, Matthew",
-            "Poel, Nathan B",
-            "Best, Aaron A",
-            "Henry, Christopher S"
-        ],
-        "title": "Comparative analysis of genome-scale metabolic models for Mycoplasma genitalium, Ureaplasma parvum, and Mycoplasma hominis reveals novel routes through the Pentose Phosphate Pathway",
-        "publication": "The FASEB Journal",
-        "volumn": "24",
-        "number": "1_MeetingAbstracts",
-        "pages": "899.1",
-        "year": 2010,
-        "publisher": "FASEB"
-    },
-    {
-        "authors": [
             "Fagen, Jennie R",
             "Leonard, Michael T",
             "McCullough, Connor M",
@@ -423,7 +408,7 @@
             "Triplett, Eric W"
         ],
         "title": "Comparative genomics of cultured and uncultured strains suggests genes essential for free-living growth of Liberibacter",
-        "publication": "PloS one",
+        "publication": "PLoS One",
         "volumn": "9",
         "number": "1",
         "pages": "e84469",
@@ -453,59 +438,23 @@
     },
     {
         "authors": [
-            "Faria, José P",
-            "Overbeek, Ross",
-            "Taylor, Ronald C",
-            "Goelzer, Anne",
-            "Fromion, Vincent",
-            "Rocha, Miguel",
-            "Rocha, Isabel",
-            "Henry, Christopher S"
-        ],
-        "title": "Reconciling gene expression data with regulatory network models-a stimulon-based approach for integrated metabolic and regulatory modeling of Bacillus subtilis",
-        "publication": "AIChE Annual Meeting, Conference Proceedings",
-        "volumn": "",
-        "number": "",
-        "pages": "",
-        "year": 2014,
-        "publisher": null
-    },
-    {
-        "authors": [
             "Zarecki, Raphy",
             "Oberhardt, Matthew A",
             "Yizhak, Keren",
             "Wagner, Allon",
-            "Segal, Ella Shtifman",
+            "Shtifman Segal, Ella",
             "Freilich, Shiri",
             "Henry, Christopher S",
             "Gophna, Uri",
             "Ruppin, Eytan"
         ],
         "title": "Maximal sum of metabolic exchange fluxes outperforms biomass yield as a predictor of growth rate of microorganisms",
-        "publication": null,
-        "volumn": "",
-        "number": "",
-        "pages": "",
+        "publication": "PloS one",
+        "volumn": "9",
+        "number": "5",
+        "pages": "e98372",
         "year": 2014,
-        "publisher": null
-    },
-    {
-        "authors": [
-            "Hatzimanikatis, Vassily",
-            "Li, Chunhui",
-            "Ionita, Justin A",
-            "Henry, Christopher S",
-            "Jankowski, Matthew",
-            "Broadbelt, Linda J"
-        ],
-        "title": "Exploring the diversity of metabolism",
-        "publication": null,
-        "volumn": "",
-        "number": "",
-        "pages": "",
-        "year": 2005,
-        "publisher": null
+        "publisher": "Public Library of Science San Francisco, USA"
     },
     {
         "authors": [
@@ -526,7 +475,7 @@
         "number": "26",
         "pages": "9645-9650",
         "year": 2014,
-        "publisher": "National Acad Sciences"
+        "publisher": "National Academy of Sciences"
     },
     {
         "authors": [
@@ -538,13 +487,13 @@
             "Xia, Fangfang",
             "Henry, Christopher"
         ],
-        "title": "Tapping the Wealth of Microbial Data in High-Throughput Metabolic Model Reconstruction",
+        "title": "Tapping the wealth of microbial data in high-throughput metabolic model reconstruction",
         "publication": "Metabolic Flux Analysis",
         "volumn": "",
         "number": "",
         "pages": "19-45",
         "year": 2014,
-        "publisher": "Springer New York"
+        "publisher": "Humana Press, New York, NY"
     },
     {
         "authors": [
@@ -555,12 +504,12 @@
             "Price, Nathan D"
         ],
         "title": "Likelihood-based gene annotations for gap filling and quality assessment in genome-scale metabolic models",
-        "publication": null,
-        "volumn": "",
-        "number": "",
-        "pages": "",
+        "publication": "PLoS computational biology",
+        "volumn": "10",
+        "number": "10",
+        "pages": "e1003882",
         "year": 2014,
-        "publisher": null
+        "publisher": "Public Library of Science San Francisco, USA"
     },
     {
         "authors": [
@@ -592,7 +541,7 @@
     },
     {
         "authors": [
-            "Seaver, Samuel MD",
+            "Seaver, Samuel",
             "Bradbury, Louis MT",
             "Frelin, Océane",
             "Zarecki, Raphy",
@@ -604,9 +553,9 @@
         "publication": "Frontiers in plant science",
         "volumn": "6",
         "number": "",
-        "pages": "",
+        "pages": "142",
         "year": 2015,
-        "publisher": "Frontiers Media SA"
+        "publisher": "Frontiers"
     },
     {
         "authors": [
@@ -627,6 +576,1435 @@
         "number": "1",
         "pages": "1-8",
         "year": 2015,
-        "publisher": "Springer International Publishing"
+        "publisher": "BioMed Central"
+    },
+    {
+        "authors": [
+            "Frelin, Océane",
+            "Huang, Lili",
+            "Hasnain, Ghulam",
+            "Jeffryes, James G",
+            "Ziemak, Michael J",
+            "Rocca, James R",
+            "Wang, Bing",
+            "Rice, Jennifer",
+            "Roje, Sanja",
+            "Yurgel, Svetlana N"
+        ],
+        "title": "A directed-overflow and damage-control N-glycosidase in riboflavin biosynthesis",
+        "publication": "Biochemical journal",
+        "volumn": "466",
+        "number": "1",
+        "pages": "137-145",
+        "year": 2015,
+        "publisher": "Portland Press Ltd."
+    },
+    {
+        "authors": [
+            "Hanson, Andrew D",
+            "Henry, Christopher S",
+            "Fiehn, Oliver",
+            "de Crécy-Lagard, Valérie"
+        ],
+        "title": "Metabolite damage and metabolite damage control in plants",
+        "publication": "Annual review of plant biology",
+        "volumn": "67",
+        "number": "",
+        "pages": "131-152",
+        "year": 2016,
+        "publisher": "Annual Reviews"
+    },
+    {
+        "authors": [
+            "Oberhardt, Matthew A",
+            "Zarecki, Raphy",
+            "Reshef, Leah",
+            "Xia, Fangfang",
+            "Duran-Frigola, Miquel",
+            "Schreiber, Rachel",
+            "Henry, Christopher S",
+            "Ben-Tal, Nir",
+            "Dwyer, Daniel J",
+            "Gophna, Uri"
+        ],
+        "title": "Systems-wide prediction of enzyme promiscuity reveals a new underground alternative route for pyridoxal 5’-phosphate production in E. coli",
+        "publication": "PLoS computational biology",
+        "volumn": "12",
+        "number": "1",
+        "pages": "e1004705",
+        "year": 2016,
+        "publisher": "Public Library of Science San Francisco, CA USA"
+    },
+    {
+        "authors": [
+            "Verduzco-Castro, Ernesto A",
+            "Michalska, Karolina",
+            "Endres, Michael",
+            "Juárez-Vazquez, Ana L",
+            "Noda-García, Lianet",
+            "Chang, Changsoo",
+            "Henry, Christopher S",
+            "Babnigg, Gyorgy",
+            "Joachimiak, Andrzej",
+            "Barona-Gómez, Francisco"
+        ],
+        "title": "Co-occurrence of analogous enzymes determines evolution of a novel (βα) 8-isomerase sub-family after non-conserved mutations in flexible loop",
+        "publication": "Biochemical Journal",
+        "volumn": "473",
+        "number": "9",
+        "pages": "1141-1152",
+        "year": 2016,
+        "publisher": "Portland Press Ltd."
+    },
+    {
+        "authors": [
+            "Faria, José P",
+            "Overbeek, Ross",
+            "Taylor, Ronald C",
+            "Conrad, Neal",
+            "Vonstein, Veronika",
+            "Goelzer, Anne",
+            "Fromion, Vincent",
+            "Rocha, Miguel",
+            "Rocha, Isabel",
+            "Henry, Christopher S"
+        ],
+        "title": "Reconstruction of the regulatory network for Bacillus subtilis and reconciliation with gene expression data",
+        "publication": "Frontiers in Microbiology",
+        "volumn": "7",
+        "number": "",
+        "pages": "275",
+        "year": 2016,
+        "publisher": "Frontiers"
+    },
+    {
+        "authors": [
+            "Thiaville, Jennifer J",
+            "Frelin, Océane",
+            "Garcia-Salinas, Carolina",
+            "Harrison, Katherine",
+            "Hasnain, Ghulam",
+            "Horenstein, Nicole A",
+            "Díaz de la Garza, Rocio I",
+            "Henry, Christopher S",
+            "Hanson, Andrew D",
+            "de Crécy-Lagard, Valérie"
+        ],
+        "title": "Experimental and metabolic modeling evidence for a folate-cleaving side-activity of ketopantoate hydroxymethyltransferase (PanB)",
+        "publication": "Frontiers in microbiology",
+        "volumn": "7",
+        "number": "",
+        "pages": "431",
+        "year": 2016,
+        "publisher": "Frontiers"
+    },
+    {
+        "authors": [
+            "Henry, Christopher S",
+            "Bernstein, Hans C",
+            "Weisenhorn, Pamela",
+            "Taylor, Ronald C",
+            "Lee, Joon‐Yong",
+            "Zucker, Jeremy",
+            "Song, Hyun‐Seob"
+        ],
+        "title": "Microbial community metabolic modeling: a community data‐driven network reconstruction",
+        "publication": "Journal of cellular physiology",
+        "volumn": "231",
+        "number": "11",
+        "pages": "2339-2345",
+        "year": 2016,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Ozer, Egon A",
+            "Morris, Andrew R",
+            "Krapp, Fiorella",
+            "Henry, Christopher S",
+            "Tyo, Keith E",
+            "Lathem, Wyndham W",
+            "Hauser, Alan R"
+        ],
+        "title": "Draft genome sequence of a multidrug-resistant Klebsiella quasipneumoniae subsp. similipneumoniae isolate from a clinical source",
+        "publication": "Genome Announcements",
+        "volumn": "4",
+        "number": "3",
+        "pages": "e00422-16",
+        "year": 2016,
+        "publisher": "American Society for Microbiology 1752 N St., NW, Washington, DC"
+    },
+    {
+        "authors": [
+            "Lerma-Ortiz, Claudia",
+            "Jeffryes, James G",
+            "Cooper, Arthur JL",
+            "Niehaus, Thomas D",
+            "Thamm, Antje MK",
+            "Frelin, Océane",
+            "Aunins, Thomas",
+            "Fiehn, Oliver",
+            "de Crécy-Lagard, Valérie",
+            "Henry, Christopher S"
+        ],
+        "title": "‘Nothing of chemistry disappears in biology’: the Top 30 damage-prone endogenous metabolites",
+        "publication": "Biochemical Society Transactions",
+        "volumn": "44",
+        "number": "3",
+        "pages": "961-971",
+        "year": 2016,
+        "publisher": "Portland Press Ltd."
+    },
+    {
+        "authors": [
+            "Faria, José P",
+            "Khazaei, Tahmineh",
+            "Edirisinghe, Janaka N",
+            "Weisenhorn, Pamela",
+            "Seaver, Samuel",
+            "Conrad, Neal",
+            "Harris, Nomi",
+            "DeJongh, Matthew",
+            "Henry, Christopher S"
+        ],
+        "title": "Constructing and analyzing metabolic flux models of microbial communities",
+        "publication": "Hydrocarbon and Lipid Microbiology Protocols",
+        "volumn": "",
+        "number": "",
+        "pages": "247-273",
+        "year": 2016,
+        "publisher": "Springer, Berlin, Heidelberg"
+    },
+    {
+        "authors": [
+            "Henry, Christopher S",
+            "Lerma-Ortiz, Claudia",
+            "Gerdes, Svetlana Y",
+            "Mullen, Jeffrey D",
+            "Colasanti, Ric",
+            "Zhukov, Aleksey",
+            "Frelin, Océane",
+            "Thiaville, Jennifer J",
+            "Zallot, Rémi",
+            "Niehaus, Thomas D"
+        ],
+        "title": "Systematic identification and analysis of frequent gene fusion events in metabolic pathways",
+        "publication": "BMC genomics",
+        "volumn": "17",
+        "number": "1",
+        "pages": "1-17",
+        "year": 2016,
+        "publisher": "BioMed Central"
+    },
+    {
+        "authors": [
+            "Marshall, Christopher W",
+            "Ross, Daniel E",
+            "Handley, Kim M",
+            "Weisenhorn, Pamela B",
+            "Edirisinghe, Janaka N",
+            "Henry, Christopher S",
+            "Gilbert, Jack A",
+            "May, Harold D",
+            "Norman, R Sean"
+        ],
+        "title": "Metabolic reconstruction and modeling microbial electrosynthesis",
+        "publication": "Scientific reports",
+        "volumn": "7",
+        "number": "1",
+        "pages": "1-12",
+        "year": 2017,
+        "publisher": "Nature Publishing Group"
+    },
+    {
+        "authors": [
+            "Edirisinghe, Janaka N",
+            "Weisenhorn, Pamela",
+            "Conrad, Neal",
+            "Xia, Fangfang",
+            "Overbeek, Ross",
+            "Stevens, Rick L",
+            "Henry, Christopher S"
+        ],
+        "title": "Modeling central metabolism and energy biosynthesis across microbial life",
+        "publication": "Bmc Genomics",
+        "volumn": "17",
+        "number": "1",
+        "pages": "1-11",
+        "year": 2016,
+        "publisher": "BioMed Central"
+    },
+    {
+        "authors": [
+            "Faria, Jose P",
+            "Davis, James J",
+            "Edirisinghe, Janaka N",
+            "Taylor, Ronald C",
+            "Weisenhorn, Pamela",
+            "Olson, Robert D",
+            "Stevens, Rick L",
+            "Rocha, Miguel",
+            "Rocha, Isabel",
+            "Best, Aaron A"
+        ],
+        "title": "Computing and applying atomic regulons to understand gene expression and regulation",
+        "publication": "Frontiers in microbiology",
+        "volumn": "7",
+        "number": "",
+        "pages": "1819",
+        "year": 2016,
+        "publisher": "Frontiers"
+    },
+    {
+        "authors": [
+            "Wattam, Alice R",
+            "Davis, James J",
+            "Assaf, Rida",
+            "Boisvert, Sébastien",
+            "Brettin, Thomas",
+            "Bun, Christopher",
+            "Conrad, Neal",
+            "Dietrich, Emily M",
+            "Disz, Terry",
+            "Gabbard, Joseph L"
+        ],
+        "title": "Improvements to PATRIC, the all-bacterial bioinformatics database and analysis resource center",
+        "publication": "Nucleic acids research",
+        "volumn": "45",
+        "number": "D1",
+        "pages": "D535-D542",
+        "year": 2017,
+        "publisher": "Oxford University Press"
+    },
+    {
+        "authors": [
+            "van der Lelie, Daniel",
+            "Taghavi, Safiyh",
+            "Henry, Christopher",
+            "Gilbert, Jack A"
+        ],
+        "title": "The microbiome as a source of new enterprises and job creation: considering clinical faecal and synthetic microbiome transplants and therapeutic regulation",
+        "publication": "Microbial Biotechnology",
+        "volumn": "10",
+        "number": "1",
+        "pages": "4",
+        "year": 2017,
+        "publisher": "Wiley-Blackwell"
+    },
+    {
+        "authors": [
+            "Wu, R",
+            "Wilton, R",
+            "Cuff, ME",
+            "Endres, M",
+            "Babnigg, G",
+            "Edirisinghe, JN",
+            "Henry, CS",
+            "Joachimiak, A",
+            "Schiffer, M",
+            "Pokkuluri, PR"
+        ],
+        "title": "A novel signal transduction protein: Combination of solute binding and tandem PAS‐like sensor domains in one polypeptide chain",
+        "publication": "Protein Science",
+        "volumn": "26",
+        "number": "4",
+        "pages": "857-869",
+        "year": 2017,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Henry, Christopher S",
+            "Rotman, Ella",
+            "Lathem, Wyndham W",
+            "Tyo, Keith EJ",
+            "Hauser, Alan R",
+            "Mandel, Mark J"
+        ],
+        "title": "Generation and validation of the iKp1289 metabolic model for Klebsiella pneumoniae KPPR1",
+        "publication": "The Journal of infectious diseases",
+        "volumn": "215",
+        "number": "suppl_1",
+        "pages": "S37-S43",
+        "year": 2017,
+        "publisher": "Oxford University Press"
+    },
+    {
+        "authors": [
+            "Juárez-Vázquez, Ana Lilia",
+            "Edirisinghe, Janaka N",
+            "Verduzco-Castro, Ernesto A",
+            "Michalska, Karolina",
+            "Wu, Chenggang",
+            "Noda-García, Lianet",
+            "Babnigg, Gyorgy",
+            "Endres, Michael",
+            "Medina-Ruíz, Sofía",
+            "Santoyo-Flores, Julián"
+        ],
+        "title": "Evolution of substrate specificity in a retained enzyme driven by gene loss",
+        "publication": "Elife",
+        "volumn": "6",
+        "number": "",
+        "pages": "e22679",
+        "year": 2017,
+        "publisher": "eLife Sciences Publications Limited"
+    },
+    {
+        "authors": [
+            "Gillum, MP",
+            "Potthoff, MJ",
+            "Richardson, AP",
+            "Halestrap, AP",
+            "Verduzco-Castro, EA",
+            "Michalska, K",
+            "Endres, M",
+            "Juárez-Vazquez, AL",
+            "Noda-Garcıa, L",
+            "Chang, C"
+        ],
+        "title": "Commentary Article",
+        "publication": "BIOCHEMICAL JOURNAL",
+        "volumn": "473",
+        "number": "part 9",
+        "pages": "",
+        "year": 2016,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Sun, Jiayi",
+            "Jeffryes, James G",
+            "Henry, Christopher S",
+            "Bruner, Steven D",
+            "Hanson, Andrew D"
+        ],
+        "title": "Metabolite damage and repair in metabolic engineering design",
+        "publication": "Metabolic engineering",
+        "volumn": "44",
+        "number": "",
+        "pages": "150-159",
+        "year": 2017,
+        "publisher": "Academic Press"
+    },
+    {
+        "authors": [
+            "Kutt, Laura",
+            "DeJongh, Matthew",
+            "Henry, Christopher S",
+            "Thiele, Ines",
+            "Fleming, Ronan MT"
+        ],
+        "title": "Automatic generation of genome-scale metabolism and expression models for bacteria",
+        "publication": null,
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": null,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Edirisinghe, Janaka N",
+            "Faria, José P",
+            "Harris, Nomi L",
+            "Allen, Benjamin H",
+            "Henry, Christopher S"
+        ],
+        "title": "Reconstruction and analysis of central metabolism in microbes",
+        "publication": "Metabolic Network Reconstruction and Modeling",
+        "volumn": "",
+        "number": "",
+        "pages": "111-129",
+        "year": 2018,
+        "publisher": "Humana Press, New York, NY"
+    },
+    {
+        "authors": [
+            "Song, Hyun-Seob",
+            "Nelson, William C",
+            "Lee, Joon-Yong",
+            "Taylor, Ronald C",
+            "Henry, Christopher S",
+            "Beliaev, Alexander S",
+            "Ramkrishna, Doraiswami",
+            "Bernstein, Hans C"
+        ],
+        "title": "Metabolic network modeling for computer-aided design of microbial interactions",
+        "publication": "Emerg. Areas Bioeng",
+        "volumn": "2",
+        "number": "",
+        "pages": "793-801",
+        "year": 2018,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Huang, Lili",
+            "Pyc, Michal",
+            "Alseekh, Saleh",
+            "McCarty, Donald R",
+            "de Crécy-Lagard, Valérie",
+            "Gregory III, Jesse F",
+            "Henry, Christopher S",
+            "Fernie, Alisdair R",
+            "Mullen, Robert T",
+            "Hanson, Andrew D"
+        ],
+        "title": "A plastidial pantoate transporter with a potential role in pantothenate synthesis",
+        "publication": "Biochemical Journal",
+        "volumn": "475",
+        "number": "4",
+        "pages": "813-825",
+        "year": 2018,
+        "publisher": "Portland Press Ltd."
+    },
+    {
+        "authors": [
+            "Jeffryes, James G",
+            "Seaver, Samuel MD",
+            "Faria, José P",
+            "Henry, Christopher S"
+        ],
+        "title": "A pathway for every product? Tools to discover and design plant metabolism",
+        "publication": "Plant Science",
+        "volumn": "273",
+        "number": "",
+        "pages": "61-70",
+        "year": 2018,
+        "publisher": "Elsevier"
+    },
+    {
+        "authors": [
+            "Seaver, Samuel MD",
+            "Lerma‐Ortiz, Claudia",
+            "Conrad, Neal",
+            "Mikaili, Arman",
+            "Sreedasyam, Avinash",
+            "Hanson, Andrew D",
+            "Henry, Christopher S"
+        ],
+        "title": "PlantSEED enables automated annotation and reconstruction of plant primary metabolism with improved compartmentalization and comparative consistency",
+        "publication": "The Plant Journal",
+        "volumn": "95",
+        "number": "6",
+        "pages": "1102-1113",
+        "year": 2018,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Lieven, Christian",
+            "Beber, Moritz E",
+            "Olivier, Brett G",
+            "Bergmann, Frank T",
+            "Ataman, Meric",
+            "Babaei, Parizad",
+            "Bartell, Jennifer A",
+            "Blank, Lars M",
+            "Chauhan, Siddharth",
+            "Correia, Kevin"
+        ],
+        "title": "Memote: A community driven effort towards a standardized genome-scale metabolic model test suite",
+        "publication": "BioRxiv",
+        "volumn": "",
+        "number": "",
+        "pages": "350991",
+        "year": 2018,
+        "publisher": "Cold Spring Harbor Laboratory"
+    },
+    {
+        "authors": [
+            "Arkin, Adam P",
+            "Cottingham, Robert W",
+            "Henry, Christopher S",
+            "Harris, Nomi L",
+            "Stevens, Rick L",
+            "Maslov, Sergei",
+            "Dehal, Paramvir",
+            "Ware, Doreen",
+            "Perez, Fernando",
+            "Canon, Shane"
+        ],
+        "title": "KBase: the United States department of energy systems biology knowledgebase",
+        "publication": "Nature biotechnology",
+        "volumn": "36",
+        "number": "7",
+        "pages": "566-569",
+        "year": 2018,
+        "publisher": "nature publishing group"
+    },
+    {
+        "authors": [
+            "Faria, José P",
+            "Rocha, Miguel",
+            "Rocha, Isabel",
+            "Henry, Christopher S"
+        ],
+        "title": "Methods for automated genome-scale metabolic model reconstruction",
+        "publication": "Biochemical Society Transactions",
+        "volumn": "46",
+        "number": "4",
+        "pages": "931-936",
+        "year": 2018,
+        "publisher": "Portland Press Ltd."
+    },
+    {
+        "authors": [
+            "Li, Kevin",
+            "Chen, Rachel",
+            "Lindsey, William",
+            "Best, Aaron",
+            "DeJongh, Matthew",
+            "Henry, Christopher",
+            "Tintle, Nathan"
+        ],
+        "title": "Implementing and evaluating a Gaussian mixture framework for identifying gene function from TnSeq data",
+        "publication": "BIOCOMPUTING 2019: Proceedings of the Pacific Symposium",
+        "volumn": "",
+        "number": "",
+        "pages": "172-183",
+        "year": 2018,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Verduzco-Castro, EA",
+            "Michalska, K",
+            "Endres, M",
+            "Juarez-Vazquez, AL",
+            "Noda-Garcia, L",
+            "Chang, C",
+            "Henry, CS",
+            "Babnigg, G",
+            "Joachimiak, A",
+            "Barona-Gomez, F"
+        ],
+        "title": "Co-occurrence of analogous enzymes determines evolution of a novel () 8-isomerase sub-family after non-conserved mutations in flexible loop",
+        "publication": "Biochemical Journal",
+        "volumn": "473",
+        "number": "9",
+        "pages": "",
+        "year": 2016,
+        "publisher": "Argonne National Lab.(ANL), Argonne, IL (United States)"
+    },
+    {
+        "authors": [
+            "Sedova, Ada",
+            "Jeffryes, James G",
+            "Petridis, Loukas",
+            "Davison, Brian H",
+            "Henry, Christopher S",
+            "Mitchell, Julie"
+        ],
+        "title": "Genome to Structure: From Multiple Sequence Alignment to Virtual Ligand Screening Using Co-Evolutionary Protein-Residue Contact-Prediction in KBase",
+        "publication": null,
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": null,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Lax, Simon",
+            "Cardona, Cesar",
+            "Zhao, Dan",
+            "Winton, Valerie J",
+            "Goodney, Gabriel",
+            "Gao, Peng",
+            "Gottel, Neil",
+            "Hartmann, Erica M",
+            "Henry, Chris",
+            "Thomas, Paul M"
+        ],
+        "title": "Microbial and metabolic succession on common building materials under high humidity conditions",
+        "publication": "Nature communications",
+        "volumn": "10",
+        "number": "1",
+        "pages": "1-12",
+        "year": 2019,
+        "publisher": "Nature Publishing Group"
+    },
+    {
+        "authors": [
+            "Jeffryes, James",
+            "Strutz, Jonathan",
+            "Henry, Chris",
+            "Tyo, Keith EJ"
+        ],
+        "title": "Metabolic in silico network expansions to predict and exploit enzyme promiscuity",
+        "publication": "Microbial Metabolic Engineering",
+        "volumn": "",
+        "number": "",
+        "pages": "11-21",
+        "year": 2019,
+        "publisher": "Humana Press, New York, NY"
+    },
+    {
+        "authors": [
+            "Cuevas, Daniel A",
+            "Edirisinghe, Janaka",
+            "Henry, Chris S",
+            "Overbeek, Ross",
+            "O’Connell, Taylor G",
+            "Edwards, Robert A"
+        ],
+        "title": "From DNA to FBA: how to build your own genome-scale metabolic model",
+        "publication": "Frontiers in microbiology",
+        "volumn": "7",
+        "number": "",
+        "pages": "907",
+        "year": 2016,
+        "publisher": "Frontiers"
+    },
+    {
+        "authors": [
+            "Cuevas, Daniel A",
+            "Garza, Daniel",
+            "Sanchez, Savannah E",
+            "Rostron, Jason",
+            "Henry, Chris",
+            "Segall, Anca",
+            "Rohwer, Forest",
+            "Edwards, Robert A"
+        ],
+        "title": "High-throughput phenotype profiling for bacterial flux-balance model optimization",
+        "publication": "Proteins",
+        "volumn": "811",
+        "number": "",
+        "pages": "19",
+        "year": null,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Gilbert, Jack A",
+            "Henry, Chris"
+        ],
+        "title": "Predicting ecosystem emergent properties at multiple scales",
+        "publication": "Environmental microbiology reports",
+        "volumn": "7",
+        "number": "1",
+        "pages": "20-22",
+        "year": 2015,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Cardona, Cesar",
+            "Lax, Simon",
+            "Larsen, Peter",
+            "Stephens, Brent",
+            "Hampton-Marcell, Jarrad",
+            "Edwardson, Christian F",
+            "Henry, Chris",
+            "Van Bonn, Bill",
+            "Gilbert, Jack A"
+        ],
+        "title": "Environmental sources of bacteria differentially influence host-associated microbial dynamics",
+        "publication": "MSystems",
+        "volumn": "3",
+        "number": "3",
+        "pages": "e00052-18",
+        "year": 2018,
+        "publisher": "American Society for Microbiology 1752 N St., NW, Washington, DC"
+    },
+    {
+        "authors": [
+            "Cardona, Cesar",
+            "Weisenhorn, Pamela",
+            "Henry, Chris",
+            "Gilbert, Jack A"
+        ],
+        "title": "Network-based metabolic analysis and microbial community modeling",
+        "publication": "Current Opinion in Microbiology",
+        "volumn": "31",
+        "number": "",
+        "pages": "124-131",
+        "year": 2016,
+        "publisher": "Elsevier Current Trends"
+    },
+    {
+        "authors": [
+            "Cuevas, Daniel A",
+            "Garza, Daniel",
+            "Sanchez, Savannah E",
+            "Rostron, Jason",
+            "Henry, Chris S",
+            "Vonstein, Veronika",
+            "Overbeek, Ross A",
+            "Segall, Anca",
+            "Rohwer, Forest",
+            "Dinsdale, Elizabeth A"
+        ],
+        "title": "Elucidating genomic gaps using phenotypic profiles",
+        "publication": "F1000Research",
+        "volumn": "3",
+        "number": "",
+        "pages": "210",
+        "year": 2016,
+        "publisher": "F1000 Research Limited London, UK"
+    },
+    {
+        "authors": [
+            "Gupta, Nidhi",
+            "Skinner, Kelly A",
+            "Khan, Samiya",
+            "Edirisinghe, Janaka N",
+            "Henry, Christopher S"
+        ],
+        "title": "Draft genome sequence of Enterobacter sp. strain A8, a Carbazole-Degrading bacterium",
+        "publication": "Microbiology Resource Announcements",
+        "volumn": "8",
+        "number": "18",
+        "pages": "e00301-19",
+        "year": 2019,
+        "publisher": "American Society for Microbiology 1752 N St., NW, Washington, DC"
+    },
+    {
+        "authors": [
+            "Gupta, Nidhi",
+            "Skinner, Kelly A",
+            "Summers, Zarath M",
+            "Edirisinghe, Janaka N",
+            "Faria, José P",
+            "Marshall, Christopher W",
+            "Sharma, Anukriti",
+            "Gottel, Neil R",
+            "Gilbert, Jack A",
+            "Henry, Christopher S"
+        ],
+        "title": "Draft genome sequence of Rhodococcus sp. strain ATCC 49988, a quinoline-degrading bacterium",
+        "publication": "Microbiology resource announcements",
+        "volumn": "8",
+        "number": "25",
+        "pages": "e00403-19",
+        "year": 2019,
+        "publisher": "American Society for Microbiology 1752 N St., NW, Washington, DC"
+    },
+    {
+        "authors": [
+            "Weisenhorn, Pamela",
+            "Faria, José P",
+            "Henry, Christopher"
+        ],
+        "title": "Comparative'Omics and Modeling Microbial Community Interactions Using the DOE Systems Biology Knowledgebase (KBase)",
+        "publication": "2017 ESA Annual Meeting (August 6--11)",
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": 2017,
+        "publisher": "ESA"
+    },
+    {
+        "authors": [
+            "Qiu, Zirou",
+            "Shaydulin, Ruslan",
+            "Liu, Xiaoyuan",
+            "Alexeev, Yuri",
+            "Henry, Christopher S",
+            "Safro, Ilya"
+        ],
+        "title": "Network Alignment by Propagating Reliable Similarities",
+        "publication": "CoRR",
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": 2019,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Arkin, Adam P",
+            "Cottingham, Bob",
+            "Henry, Chris"
+        ],
+        "title": "New pipeline for multi-omics data integration and discovery in KBase to identify the mechanism driving metabolic/OTU dynamics in a microbiome",
+        "publication": null,
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": null,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Khazaei, Tahmineh",
+            "Williams, Rory L",
+            "Bogatyrev, Said R",
+            "Doyle, John C",
+            "Henry, Christopher S",
+            "Ismagilov, Rustem F"
+        ],
+        "title": "Metabolic multistability and hysteresis in a model aerobe-anaerobe microbiome community",
+        "publication": "Science advances",
+        "volumn": "6",
+        "number": "33",
+        "pages": "eaba0353",
+        "year": 2020,
+        "publisher": "American Association for the Advancement of Science"
+    },
+    {
+        "authors": [
+            "Lieven, Christian",
+            "Beber, Moritz E",
+            "Olivier, Brett G",
+            "Bergmann, Frank T",
+            "Ataman, Meric",
+            "Babaei, Parizad",
+            "Bartell, Jennifer A",
+            "Blank, Lars M",
+            "Chauhan, Siddharth",
+            "Correia, Kevin"
+        ],
+        "title": "MEMOTE for standardized genome-scale metabolic model testing",
+        "publication": "Nature biotechnology",
+        "volumn": "38",
+        "number": "3",
+        "pages": "272-276",
+        "year": 2020,
+        "publisher": "Nature Publishing Group"
+    },
+    {
+        "authors": [
+            "Tivendale, Nathan D",
+            "Hanson, Andrew D",
+            "Henry, Christopher S",
+            "Hegeman, Adrian D",
+            "Millar, A Harvey"
+        ],
+        "title": "Enzymes as parts in need of replacement–and how to extend their working life",
+        "publication": "Trends in Plant Science",
+        "volumn": "25",
+        "number": "7",
+        "pages": "661-669",
+        "year": 2020,
+        "publisher": "Elsevier Current Trends"
+    },
+    {
+        "authors": [
+            "Seaver, Samuel MD",
+            "Liu, Filipe",
+            "Zhang, Qizhi",
+            "Jeffryes, James",
+            "Faria, José P",
+            "Edirisinghe, Janaka N",
+            "Mundy, Michael",
+            "Chia, Nicholas",
+            "Noor, Elad",
+            "Beber, Moritz E"
+        ],
+        "title": "The ModelSEED Database for the integration of metabolic annotations and the reconstruction, comparison, and analysis of metabolic models for plants, fungi, and microbes",
+        "publication": "bioRxiv",
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": 2020,
+        "publisher": "Cold Spring Harbor Laboratory"
+    },
+    {
+        "authors": [
+            "Gupta, Nidhi",
+            "Skinner, Kelly A",
+            "Summers, Zarath M",
+            "Edirisinghe, Janaka N",
+            "Faria, José P",
+            "Marshall, Christopher W",
+            "Sharma, Anukriti",
+            "Gottel, Neil R",
+            "Gilbert, Jack A",
+            "Henry, Christopher S"
+        ],
+        "title": "Draft Genome Sequence of 2-Methylpyridine-, 2-Ethylpyridine-, and 2-Hydroxypyridine-Degrading Arthrobacter sp. Strain ATCC 49987",
+        "publication": "Microbiology resource announcements",
+        "volumn": "9",
+        "number": "34",
+        "pages": "e00748-20",
+        "year": 2020,
+        "publisher": "American Society for Microbiology 1752 N St., NW, Washington, DC"
+    },
+    {
+        "authors": [
+            "Zhao, Dan",
+            "Cardona, Cesar",
+            "Gottel, Neil",
+            "Winton, Valerie J",
+            "Thomas, Paul M",
+            "Raba, Daniel A",
+            "Kelley, Scott T",
+            "Henry, Christopher",
+            "Gilbert, Jack A",
+            "Stephens, Brent"
+        ],
+        "title": "Chemical composition of material extractives influences microbial growth and dynamics on wetted wood materials",
+        "publication": "Scientific reports",
+        "volumn": "10",
+        "number": "1",
+        "pages": "1-16",
+        "year": 2020,
+        "publisher": "Nature Publishing Group"
+    },
+    {
+        "authors": [
+            "Gupta, Nidhi",
+            "Skinner, Kelly A",
+            "Summers, Zarath M",
+            "Edirisinghe, Janaka N",
+            "Weisenhorn, Pamela B",
+            "Faria, José P",
+            "Marshall, Christopher W",
+            "Sharma, Anukriti",
+            "Gottel, Neil R",
+            "Gilbert, Jack A"
+        ],
+        "title": "Draft Genome Sequence of Pseudarthrobacter sp. Strain ATCC 49442 (Formerly Micrococcus luteus), a Pyridine-Degrading Bacterium",
+        "publication": "Microbiology resource announcements",
+        "volumn": "9",
+        "number": "38",
+        "pages": "e00299-20",
+        "year": 2020,
+        "publisher": "American Society for Microbiology 1752 N St., NW, Washington, DC"
+    },
+    {
+        "authors": [
+            "Heinken, Almut",
+            "Acharya, Geeta",
+            "Ravcheev, Dmitry A",
+            "Hertel, Johannes",
+            "Nyga, Malgorzata",
+            "Okpala, Onyedika Emmanuel",
+            "Hogan, Marcus",
+            "Magnúsdóttir, Stefanía",
+            "Martinelli, Filippo",
+            "Preciat, German"
+        ],
+        "title": "AGORA2: large scale reconstruction of the microbiome highlights wide-spread drug-metabolising capacities",
+        "publication": "BioRxiv",
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": 2020,
+        "publisher": "Cold Spring Harbor Laboratory"
+    },
+    {
+        "authors": [
+            "Nayfach, Stephen",
+            "Roux, Simon",
+            "Seshadri, Rekha",
+            "Udwary, Daniel",
+            "Varghese, Neha",
+            "Schulz, Frederik",
+            "Wu, Dongying",
+            "Paez-Espino, David",
+            "Chen, I-Min",
+            "Huntemann, Marcel"
+        ],
+        "title": "A genomic catalog of Earth’s microbiomes",
+        "publication": "Nature biotechnology",
+        "volumn": "39",
+        "number": "4",
+        "pages": "499-509",
+        "year": 2021,
+        "publisher": "Nature Publishing Group"
+    },
+    {
+        "authors": [
+            "Seaver, Samuel MD",
+            "Liu, Filipe",
+            "Zhang, Qizhi",
+            "Jeffryes, James",
+            "Faria, José P",
+            "Edirisinghe, Janaka N",
+            "Mundy, Michael",
+            "Chia, Nicholas",
+            "Noor, Elad",
+            "Beber, Moritz E"
+        ],
+        "title": "The ModelSEED Biochemistry Database for the integration of metabolic annotations and the reconstruction, comparison and analysis of metabolic models for plants, fungi and microbes",
+        "publication": "Nucleic acids research",
+        "volumn": "49",
+        "number": "D1",
+        "pages": "D575-D588",
+        "year": 2021,
+        "publisher": "Oxford University Press"
+    },
+    {
+        "authors": [
+            "Rubinstein, Rebecca L",
+            "Borton, Mikayla A",
+            "Zhou, Haiyan",
+            "Shaffer, Michael",
+            "Hoyt, David W",
+            "Stegen, James",
+            "Henry, Christopher S",
+            "Wrighton, Kelly C",
+            "Versteeg, Roelof"
+        ],
+        "title": "ORT: A workflow linking genome-scale metabolic models with reactive transport codes",
+        "publication": "Bioinformatics",
+        "volumn": "38",
+        "number": "3",
+        "pages": "778-784",
+        "year": 2022,
+        "publisher": "Oxford University Press"
+    },
+    {
+        "authors": [
+            "Hanson, Andrew D",
+            "McCarty, Donald R",
+            "Henry, Christopher S",
+            "Xian, Xiaochen",
+            "Joshi, Jaya",
+            "Patterson, Jenelle A",
+            "García-García, Jorge D",
+            "Fleischmann, Scott D",
+            "Tivendale, Nathan D",
+            "Millar, A Harvey"
+        ],
+        "title": "The number of catalytic cycles in an enzyme’s lifetime and why it matters to metabolic engineering",
+        "publication": "Proceedings of the National Academy of Sciences",
+        "volumn": "118",
+        "number": "13",
+        "pages": "",
+        "year": 2021,
+        "publisher": "National Academy of Sciences"
+    },
+    {
+        "authors": [
+            "Joshi, Rajendra P",
+            "McNaughton, Andrew",
+            "Thomas, Dennis G",
+            "Henry, Christopher S",
+            "Canon, Shane R",
+            "McCue, Lee Ann",
+            "Kumar, Neeraj"
+        ],
+        "title": "Quantum mechanical methods predict accurate thermodynamics of biochemical reactions",
+        "publication": "ACS omega",
+        "volumn": "6",
+        "number": "14",
+        "pages": "9948-9959",
+        "year": 2021,
+        "publisher": "American Chemical Society"
+    },
+    {
+        "authors": [
+            "Lagoa, Davide",
+            "Faria, José P",
+            "Liu, Filipe",
+            "Cunha, Emanuel",
+            "Henry, Christopher S",
+            "Dias, Oscar"
+        ],
+        "title": "TranSyT, the Transport Systems Tracker",
+        "publication": "bioRxiv",
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": 2021,
+        "publisher": "Cold Spring Harbor Laboratory"
+    },
+    {
+        "authors": [
+            "Larsen, Peter E",
+            "Collart, Frank R",
+            "Field, Dawn",
+            "Meyer, Folker",
+            "Keegan, Kevin P",
+            "Henry, Christopher S",
+            "McGrath, John",
+            "Quinn, John",
+            "Gilbert, Jack A"
+        ],
+        "title": "Relative metabolomic flux: Predicting changes in the environmental metabolome from the metagenome",
+        "publication": "Microbial Informatics and Experimentation",
+        "volumn": "1",
+        "number": "4",
+        "pages": "1-11",
+        "year": 2011,
+        "publisher": "BioMed Central Ltd."
+    },
+    {
+        "authors": [
+            "van der Lelie, Daniel",
+            "Oka, Akihiko",
+            "Taghavi, Safiyh",
+            "Umeno, Junji",
+            "Fan, Ting-Jia",
+            "Merrell, Katherine E",
+            "Watson, Sarah D",
+            "Ouellette, Lisa",
+            "Liu, Bo",
+            "Awoniyi, Muyiwa"
+        ],
+        "title": "Rationally designed bacterial consortia to treat chronic immune-mediated colitis and restore intestinal homeostasis",
+        "publication": "Nature communications",
+        "volumn": "12",
+        "number": "1",
+        "pages": "1-17",
+        "year": 2021,
+        "publisher": "Nature Publishing Group"
+    },
+    {
+        "authors": [
+            "Qiu, Zirou",
+            "Shaydulin, Ruslan",
+            "Liu, Xiaoyuan",
+            "Alexeev, Yuri",
+            "Henry, Christopher S",
+            "Safro, Ilya"
+        ],
+        "title": "Elruna: elimination rule-based network alignment",
+        "publication": "Journal of Experimental Algorithmics (JEA)",
+        "volumn": "26",
+        "number": "",
+        "pages": "1-32",
+        "year": 2021,
+        "publisher": "ACM New York, NY, USA"
+    },
+    {
+        "authors": [
+            "Lelie, Daniel",
+            "Oka, Akihiko",
+            "Taghavi, Safiyh",
+            "Umeno, Junji",
+            "Fan, Ting-Jia",
+            "Merrell, Katherine E",
+            "Watson, Sarah D",
+            "Ouellette, Lisa",
+            "Liu, Bo",
+            "Awoniyi, Muyiwa"
+        ],
+        "title": "Rationally designed bacterial consortia to treat chronic immune-mediated colitis and restore intestinal homeostasis",
+        "publication": "Nature Communications",
+        "volumn": "12",
+        "number": "1",
+        "pages": "1-17",
+        "year": 2021,
+        "publisher": "Nature"
+    },
+    {
+        "authors": [
+            "Allen, Benjamin H",
+            "Gupta, Nidhi",
+            "Edirisinghe, Janaka N",
+            "Faria, José P",
+            "Henry, Christopher S"
+        ],
+        "title": "Application of the Metabolic Modeling Pipeline in KBase to Categorize Reactions, Predict Essential Genes, and Predict Pathways in an Isolate Genome",
+        "publication": "Microbial Systems Biology",
+        "volumn": "",
+        "number": "",
+        "pages": "291-320",
+        "year": 2022,
+        "publisher": "Humana, New York, NY"
+    },
+    {
+        "authors": [
+            "Bathe, Ulschan",
+            "Leong, Bryan J",
+            "McCarty, Donald R",
+            "Henry, Christopher S",
+            "Abraham, Paul E",
+            "Wilson, Mark A",
+            "Hanson, Andrew D"
+        ],
+        "title": "The Moderately (D) efficient Enzyme: Catalysis-Related Damage In Vivo and Its Repair",
+        "publication": "Biochemistry",
+        "volumn": "60",
+        "number": "47",
+        "pages": "3555-3565",
+        "year": 2021,
+        "publisher": "American Chemical Society"
+    },
+    {
+        "authors": [
+            "Kumari, Sunita",
+            "Kumar, Vivek",
+            "Beilsmith, Kathleen",
+            "Seaver, Samuel MD",
+            "Canon, Shane",
+            "Dehal, Paramvir",
+            "Gu, Tian",
+            "Joachimiak, Marcin",
+            "Lerma-Ortiz, Claudia",
+            "Liu, Filipe"
+        ],
+        "title": "A KBase case study on genome-wide transcriptomics and plant primary metabolism in response to drought stress in Sorghum.",
+        "publication": "Current Plant Biology",
+        "volumn": "28",
+        "number": "",
+        "pages": "100229",
+        "year": 2021,
+        "publisher": "Elsevier"
+    },
+    {
+        "authors": [
+            "Chivian, Dylan",
+            "Jungbluth, Sean P",
+            "Dehal, Paramvir S",
+            "Canon, Richard S",
+            "Allen, Benjamin H",
+            "Clark, Mikayla M",
+            "Gu, Tianhao",
+            "Land, Miriam L",
+            "Price, Gavin A",
+            "Riehl, William J"
+        ],
+        "title": "Genome Extraction from Shotgun Metagenome Sequence Data",
+        "publication": null,
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": 2021,
+        "publisher": "US Department of Energy Systems Biology Knowledgebase"
+    },
+    {
+        "authors": [
+            "Haas, Drago",
+            "Thamm, Antje M",
+            "Sun, Jiayi",
+            "Huang, Lili",
+            "Sun, Lijie",
+            "Beaudoin, Guillaume AW",
+            "Wise, Kim S",
+            "Lerma-Ortiz, Claudia",
+            "Bruner, Steven D",
+            "Breuer, Marian"
+        ],
+        "title": "Metabolite Damage and Damage-Control in a Minimal Genome",
+        "publication": "bioRxiv",
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": 2021,
+        "publisher": "Cold Spring Harbor Laboratory"
+    },
+    {
+        "authors": [
+            "Jeffryes, James G",
+            "Lerma-Ortiz, Claudia",
+            "Liu, Filipe",
+            "Golubev, Alexey",
+            "Niehaus, Thomas D",
+            "Elbadawi-Sidhu, Mona",
+            "Fiehn, Oliver",
+            "Hanson, Andrew D",
+            "Tyo, Keith EJ",
+            "Henry, Christopher S"
+        ],
+        "title": "Chemical-damage MINE: A database of curated and predicted spontaneous metabolic reactions",
+        "publication": "Metabolic Engineering",
+        "volumn": "69",
+        "number": "",
+        "pages": "302-312",
+        "year": 2022,
+        "publisher": "Academic Press"
+    },
+    {
+        "authors": [
+            "Lieven, C",
+            "Beber, ME",
+            "Olivier, BG",
+            "Bergmann, FT",
+            "Ataman, M",
+            "Babaei, P",
+            "Bartell, JA",
+            "Blank, LM",
+            "Chauhan, S",
+            "Correia, K"
+        ],
+        "title": "Memote: A community-driven effort towards a standardized genome-scale metabolic model test suite. BioRxiv, 350991",
+        "publication": null,
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": 2018,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Cuevas, Daniel A",
+            "Garza, Daniel",
+            "Sanchez, Savannah E",
+            "Rostron, Jason",
+            "Henry, Chris S",
+            "Vonstein, Veronika",
+            "Overbeek, Ross A",
+            "Segall, Anca",
+            "Rohwer, Forest",
+            "Dinsdale, Elizabeth A"
+        ],
+        "title": "Elucidating genomic gaps using phenotypic profiles [version 1; peer review: 2 approved with reservations]",
+        "publication": null,
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": null,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Shaffer, Michael",
+            "Borton, Mikayla A",
+            "Bolduc, Ben",
+            "Ghadermazi, Parsa",
+            "Edirisinghe, Janaka",
+            "Faria, Jose P",
+            "Miller, Christopher S",
+            "Chan, Siu Hung Joshua",
+            "Sullivan, Matt B",
+            "Henry, Christopher S"
+        ],
+        "title": "kb_DRAM: Annotating and functional profiling of genomes with DRAM in KBase",
+        "publication": "bioRxiv",
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": 2022,
+        "publisher": "Cold Spring Harbor Laboratory"
+    },
+    {
+        "authors": [
+            "Zhang, Manjing",
+            "Kennedy, Megan S",
+            "DeLeon, Orlando",
+            "Bissell, Jacie",
+            "Trigodet, Florian",
+            "Lolans, Karen",
+            "Temelkova, Sara",
+            "Carroll, Katherine T",
+            "Fiebig, Aretha",
+            "Deutschbauer, Adam"
+        ],
+        "title": "Dynamic Genetic Adaptation of Bacteroides thetaiotaomicron During Murine Gut Colonization",
+        "publication": "Bacteroides thetaiotaomicron",
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": null,
+        "publisher": null
+    },
+    {
+        "authors": [
+            "Zhang, Manjing",
+            "Kennedy, Megan",
+            "DeLeon, Orlando",
+            "Bissell, Jacie",
+            "Trigodet, Florian",
+            "Lolans, Karen",
+            "Temelkova, Sara",
+            "Carroll, Katherine T",
+            "Fiebig, Aretha",
+            "Deutschbauer, Adam"
+        ],
+        "title": "Dynamic genetic adaptation of Bacteroides thetaiotaomicron murine gut colonization",
+        "publication": "bioRxiv",
+        "volumn": "",
+        "number": "",
+        "pages": "",
+        "year": 2022,
+        "publisher": "Cold Spring Harbor Laboratory"
     }
 ]
